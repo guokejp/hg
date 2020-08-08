@@ -1,0 +1,81 @@
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					培训班名称：<input type="text" name="name" value="<{$Think.post.name}>"/>
+				</td>
+				<td>部门：</td>
+				<td>
+					<select class="combox" name="sectionid">
+						<option value="">所有部门</option>
+						<foreach name="sectionlist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.sectionid"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>财务账期：</td>
+				<td>
+					<select class="combox" name="termid">
+						<foreach name="termlist" item="vo">
+							<option value="<{$vo.id}>" <empty name="Think.post.termid"><eq name="vo.id" value="$Think.session.DFHGFf3456DJ"> selected="selected" </eq><else/><eq name="vo.id" value="$Think.post.termid"> selected="selected" </eq></empty>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add/pid/0" target="dialog" height="600" rel="Trainadd"><span>录入计划</span></a></li>
+			<li><a class="delete" href="__URL__/delete/id/{item_id}/navTabId/Trainindex" target="ajaxTodo" title="确定要删除吗?"><span>删除计划</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{item_id}" target="dialog" height="600" rel="Trainedit"><span>修改计划</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="114">
+		<thead>
+			<tr>
+				<th width="40">序号</th>
+				<th width="160">培训班名称</th>
+				<th>培训内容</th>
+				<th width="40">期数</th>
+				<th width="40">剩余</th>
+				<th width="60">人数</th>
+				<th width="80">地点</th>
+				<th width="40">天数</th>
+				<th width="60">所需经费</th>
+				<th width="100">经费来源</th>
+				<th width="80">已用金额</th>
+				<th width="100">举办部门</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.name}></td>
+				<td><{$vo.remark}></td>
+				<td><{$vo.total}>期</td>
+				<td><{$vo.staging}>期</td>
+				<td><{$vo.number}></td>
+				<td><{$vo.place}></td>
+				<td><{$vo.duration}></td>
+				<td><{$vo.money}></td>
+				<td><{$vo.origin}></td>
+				<td><{$vo.confirm}></td>
+				<td><{$vo.sectionname}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

@@ -1,0 +1,66 @@
+<div class="pageContent">
+	<form method="post" action="<{:U('Wagestx/editinsert',array('navTabId'=>'Wagestxindex','callbackType'=>'closeCurrent'))}>" class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="<{$data.id}>"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">序号：</dt>
+				<dd><input type="text" class="required digits"  style="width:100%" name="num" value="<{$data.num}>" />
+				</dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">部门：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="section" value="<{$data.section}>" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">姓名：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="name" value="<{$data.name}>" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">卡号：</dt>
+				<dd><input type="text" class="required digits"  style="width:100%" name="card" value="<{$data.card}>" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">离（退）休费：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="retire_wages" value="<{$data.retire_wages}>" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">离（退）休人员补贴：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="retire_subsidies" value="<{$data.retire_subsidies}>" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">公务电话费：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="officialphone" value="<{$data.officialphone}>" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">政法干警补贴：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="lawpolice_subsidies" value="<{$data.lawpolice_subsidies}>" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">护理费：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="nursing" value="<{$data.nursing}>" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">保留津贴：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="keep_subsidies" value="<{$data.keep_subsidies}>" /></dd>
+			</dl>
+			
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">合计：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="wages" value="<{$data.wages}>" /></dd>
+			</dl>
+
+
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+
+

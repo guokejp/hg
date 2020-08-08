@@ -1,0 +1,94 @@
+<script type="text/javascript">
+	$(function(){
+		$('#chstaff').click(function(){
+			$('#secselect').show();
+			$('#secselect').addClass('required');
+			$('#secselect').attr('name','sectionid');
+			$('#secinput_hide').removeAttr('name');
+			$('#secinput_hide').removeClass('required');
+			$('#secinput').hide();
+
+			$('#stainput').hide();
+			$('#stainput_hide').removeAttr('name');
+			$('#stainput_hide').removeClass('required');
+			$('#stacselect').show();
+			$('#stacselect').attr('name','staffid');
+			$('#stacselect').addClass('required');
+			$('#stacselect').find('option').remove();
+		})
+		$('#secselect').change(function(){
+			var scid=$('#secselect').find('option:selected').val();
+			$('#stacselect').find('option').remove();
+			$.ajax({
+				url:'__URL__/getstaff',
+				type:'post',
+				data:{'sectionid':scid},
+				dataType:'json',
+				success:function(data){
+					if (data) {
+						$('#stainput').hide();
+						$('#stainput_hide').removeAttr('name');
+						$('#stainput_hide').removeClass('required');
+						$('#stacselect').show();
+						$('#stacselect').attr('name','staffid');
+						$('#stacselect').addClass('required');
+						$('#stacselect').append("<option value=''>请选择</option>");
+						for (var i = 0; i < data.length; i++) {
+							$('#stacselect').append("<option value="+data[i]["id"]+">"+data[i]["name"]+"</option>");
+						}
+					}
+				},
+				error:function(){
+					alertMsg.error('错误');
+				}
+			})
+		})
+		$('#unchstaff').click(function(){
+			$('#secselect').hide();
+			$('#secselect').removeClass('required');
+			$('#secselect').removeAttr('name');
+			$('#secinput_hide').attr('name','sectionid');
+			$('#secinput_hide').addClass('required');
+			$('#secinput').show();
+
+			$('#stainput').show();
+			$('#stainput_hide').attr('name','staffid');
+			$('#stainput_hide').addClass('required');
+			$('#stacselect').hide();
+			$('#stacselect').removeAttr('name');
+			$('#stacselect').removeClass('required');
+		})
+	})
+</script>
+<input type="hidden" name="instaid" value="<{:session(C('ADMIN_AUTH_ID'))}>">
+<dl style="width:550px">
+	<dt>部门：</dt>
+	<dd style="width:400px">
+		<input id='secinput' type="text" value="<{:session(C('ADMIN_AUTH_SECTIONNAME'))}>" readonly='true'/>
+
+		<input id='secinput_hide' type="hidden" name="sectionid" value="<{:session(C('ADMIN_AUTH_SECTIONID'))}>" class='required' />
+		
+		<select id="secselect" style="display: none;">
+			<option value="">请选择</option>
+			<foreach name='sectionlist' item="vo">
+				<option value="<{$vo.id}>"><{$vo.name}></option>
+			</foreach>
+		</select>
+
+		<input type="button" style="float: left" id="chstaff" value="更改">
+		<input type="button" style="float: left" id="unchstaff" value="取消">
+	</dd>
+</dl>
+<dl>
+	<dt>申请人：</dt>
+	<dd>
+		<input id='stainput' type="text" value="<{:session(C('ADMIN_AUTH_NAME'))}>" readonly='true' />
+
+		<input id="stainput_hide" type="hidden" name="staffid" value="<{:session(C('ADMIN_AUTH_ID'))}>" class='required' />
+
+		<select id="stacselect" style="display: none;">
+			
+		</select>
+
+	</dd>
+</dl>

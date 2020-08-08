@@ -1,0 +1,102 @@
+
+<style type="text/css">
+    .zautableinput{width:92%;height:100%;border-width: 0px;background-color:#F3F3FA; }
+    .changcolor{background-color:#E6E6F2;}
+</style>
+<div class="pageContent" layoutH="0" >
+  <form rel="pageForm" onsubmit="return navTabSearch(this);" action="__ACTION__" method="post">
+    <h4 style="margin-left:300px;margin-bottom:0px;font-size:1.7em;letter-spacing:10px">"五项专用"按科目查询（单位：万元）</h4>
+    <div style="width:1200px;margin-left:10px">
+        <div>
+            <div style="float:left">
+                <p>填报年份:</p>
+            </div>
+            <div style="float:left">
+                <select name="postyear">
+                        <option value="">请选择年份</option>
+                    <volist id="year" name="year">
+                        <option value="<{$year.year}>" <eq name="year.year" value="$Think.post.postyear">selected='selected'</eq>><{$year.year}></option>
+                    </volist>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div style="float:left;margin-left:20px;">
+                <p>填报月份:</p>
+            </div>
+            <div style="float:left">
+                <select name="postmonth" class="required">
+                    <option value="1" <eq name="Think.post.postmonth" value="1">selected='selected'</eq>>1</option>
+                    <option value="2" <eq name="Think.post.postmonth" value="2">selected='selected'</eq>>2</option>
+                    <option value="3" <eq name="Think.post.postmonth" value="3">selected='selected'</eq>>3</option>
+                    <option value="4" <eq name="Think.post.postmonth" value="4">selected='selected'</eq>>4</option>
+                    <option value="5" <eq name="Think.post.postmonth" value="5">selected='selected'</eq>>5</option>
+                    <option value="6" <eq name="Think.post.postmonth" value="6">selected='selected'</eq>>6</option>
+                    <option value="7" <eq name="Think.post.postmonth" value="7">selected='selected'</eq>>7</option>
+                    <option value="8" <eq name="Think.post.postmonth" value="8">selected='selected'</eq>>8</option>
+                    <option value="9" <eq name="Think.post.postmonth" value="9">selected='selected'</eq>>9</option>
+                    <option value="10" <eq name="Think.post.postmonth" value="10">selected='selected'</eq>>10</option>
+                    <option value="11" <eq name="Think.post.postmonth" value="11">selected='selected'</eq>>11</option>
+                    <option value="12" <eq name="Think.post.postmonth" value="12">selected='selected'</eq>>12</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div style="float:left">
+                <p>查询单位:</p>
+            </div>
+            <div style="float:left">
+                <select name="postunitid">
+                        <option value="all">全关区</option>
+                    <volist id="unit" name="unit">
+                        <option value="<{$unit.id}>" <eq name="unit.id" value="$Think.post.postunitid">selected='selected'</eq>><{$unit.name}></option>
+                    </volist>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+    </form>
+
+    <table width="1308" border="1" style="border-collapse:collapse;margin-left:10px;clear:both">
+        <tr>
+            <td width="120" height="55" rowspan="2" align="center" valign="middle">资金项目</td>
+            <td colspan="3" align="center" valign="middle">全年控制额度</td>
+            <td colspan="3" align="center" valign="middle">实际支出</td>
+            <td colspan="3" align="center" valign="middle">执行率</td>
+            <td colspan="3" align="center" valign="middle">期末余额</td>
+        </tr>
+        <tr>
+          <td>财政</td>
+          <td>非财政</td>
+          <td>小计</td>
+          <td width="70" align="center" valign="middle">财政</td>
+          <td width="70" align="center" valign="middle">非财政</td>
+          <td width="70" align="center" valign="middle">小计</td>
+            <td width="70" align="center" valign="middle">财政</td>
+            <td width="70" align="center" valign="middle">非财政</td>
+            <td align="center" valign="middle">小计</td>
+            <td width="70" align="center" valign="middle">财政</td>
+            <td width="70" align="center" valign="middle">非财政</td>
+            <td width="70" align="center" valign="middle">小计</td>
+        </tr>
+        <volist name='data' id='data'>
+            <tr height="25" valign="middle">
+                <td width="70"><{$data.kemuname}></td>
+                <td width="70"><{$data.budget_caizheng}></td>
+                <td width="70"><{$data.budget_ncaizheng}></td>
+                <td width="70"><{$data.budget_add}></td>
+                <td width="70"><{$data.use_caizheng}></td>
+                <td width="70"><{$data.use_ncaizheng}></td>
+                <td width="70"><{$data.use_add}></td>
+                <td width="70" class="changcolor"><{$data.lv_caizheng}></td>
+                <td width="70" class="changcolor"><{$data.lv_ncaizheng}></td>
+                <td width="70" class="changcolor"><{$data.lv_add}></td>
+                <td width="70"><{$data.yu_caizheng}></td>
+                <td width="70"><{$data.yu_ncaizheng}></td>
+                <td width="70"><{$data.yu_add}></td>
+            </tr>
+        </volist>
+    </table>
+</div>
+

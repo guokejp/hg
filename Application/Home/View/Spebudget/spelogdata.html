@@ -1,0 +1,61 @@
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return dialogSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<input type="hidden" name="spebudid" value="<{$spebudid}>">
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>采购报销：</td>
+				<td>
+					<select class="combox" name="type">
+						<option value="">请选择</option>
+						<option value="1" <eq name="Think.post.type" value="1"> selected="selected" </eq>>一般专项</option>
+						<option value="2" <eq name="Think.post.type" value="2"> selected="selected" </eq>>采购报销</option>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="90">
+		<thead>
+			<tr>
+				<th width="40">ID</th>
+				<th width="80">专项单位</th>
+				<th width="100">专项部门</th>
+				<th width="160">专项名称</th>
+				<th width="80">报销人</th>
+				<th width="100">报销单号</th>
+				<th width="80">报销金额</th>
+				<th width="100">是否采购合同报销</th>
+				<th width="70">报销时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.unitname}></td>
+				<td><{$vo.sectionname}></td>
+				<td><{$vo.specialname}></td>
+				<td><{$vo.staffname}></td>
+				<td><{$vo.orderid}></td>
+				<td><{$vo.money}></td>
+				<td>
+					<if condition="$vo.type eq 1">
+					<elseif condition="$vo.type eq 2"/><b>采购合同报销</b>
+					</if>
+				</td>
+				<td><{$vo.logdate}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

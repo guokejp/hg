@@ -1,0 +1,83 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/allow/navTabId/Billaudit/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<input type="hidden" name="id" value="<{$data.id}>" />
+		<input type="hidden" name="status" value="1">
+		<input type="hidden" name="chestaid" value="<{:session(C('ADMIN_AUTH_ID'))}>">
+		<dl>
+			<dt>报销单号：</dt>
+			<dd>
+				<input type="text"  value="<{$data.orderid}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>费用类型</dt>
+			<dd><input type="text"  value="<{$data.type|showbilltype}>" readonly="readonly" class="required" /></dd>
+		</dl>
+		<dl>
+			<dt>合同名称：</dt>
+			<dd>
+				<input type="text"  value="<{$data.contractname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>具体形式名称：</dt>
+			<dd>
+				<input type="text"  value="<{$data.contract_money_name}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>期数：</dt>
+			<dd>
+				<input type="text"  value="<{$data.contractmoneyqishuid}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+		<dl>
+			<dt>部门：</dt>
+			<dd>
+				<input type="text" value="<{$data.sectionname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请人：</dt>
+			<dd>
+				<input type="text" value="<{$data.staffname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>报销金额：</dt>
+			<dd>
+				<input type="text"  name="billmoney" readonly="readonly" class="required number" value="<{$data.money}>" />
+			</dd>
+		</dl>
+		<dl style="height:36px;">
+			<dt>报销事由：</dt>
+			<dd>
+				<textarea class="required" name="remark" style="width:100%;"><{$data.remark}></textarea>
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>核批金额：</dt>
+			<dd>
+				<input type="text"  name="confirm" class="required number"  readonly="readonly" value="<{$data.money}>" max="<{$data.money}>"/>
+			</dd>
+		</dl>
+		<dl>
+			<dt>核批意见：</dt>
+			<dd>
+				<textarea class="required" name="cremark" style="width:100%;">同意。</textarea>
+			</dd>
+		</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">审批通过</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

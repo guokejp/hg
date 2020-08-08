@@ -1,0 +1,571 @@
+[ 2016-01-13T17:22:22+08:00 ] 127.0.0.1 /hg/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000072s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.026538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.026650s ]
+
+[ 2016-01-13T17:22:22+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045055s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045114s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000985s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001031s ]
+
+[ 2016-01-13T17:22:28+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0553s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0576s ]
+SQL: SHOW COLUMNS FROM `hg_unit` [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `hg_role` [ RunTime:0.0440s ]
+SQL: SELECT Staff.id AS id,Staff.name AS name,Staff.number AS number,Staff.sectionid AS sectionid,Staff.password AS password,Staff.level AS level,Staff.roleid AS roleid,Staff.timestamp AS timestamp,Staff.locked AS locked,Section.name AS sectionname,Section.unitid AS unitid,Unit.name AS unitname,Role.name AS rolename FROM hg_staff Staff  JOIN hg_section Section ON Section.id=Staff.sectionid  JOIN hg_unit Unit ON Section.unitid=Unit.id  JOIN hg_role Role ON Staff.roleid=Role.id WHERE Staff.number = '1111111' LIMIT 1   [ RunTime:0.0382s ]
+
+[ 2016-01-13T17:22:28+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001929s ]
+SQL: SHOW COLUMNS FROM `hg_placard` [ RunTime:0.0305s ]
+SQL: SELECT * FROM `hg_placard` ORDER BY id desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046973s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000582s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2016-01-13T17:22:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000556s ]
+
+[ 2016-01-13T17:22:31+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Bill/index&_=1452676951253
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001463s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0432s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0262s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0476s ]
+SQL: SHOW COLUMNS FROM `hg_conference` [ RunTime:0.0466s ]
+SQL: SHOW COLUMNS FROM `hg_oncebudget` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0482s ]
+SQL: SHOW COLUMNS FROM `hg_train` [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.sectionid = 1 AND Bill.termid = 3 LIMIT 1   [ RunTime:0.0257s ]
+SQL: SELECT Bill.id AS id,Bill.type AS type,Bill.projectid AS projectid,Bill.orderid AS orderid,Bill.instaid AS instaid,Bill.sectionid AS sectionid,Bill.staffid AS staffid,Bill.money AS money,Bill.remark AS remark,Bill.timestamp AS timestamp,Bill.termid AS termid,Bill.status AS status,Bill.chestaid AS chestaid,Bill.unitid AS unitid,Bill.confirm AS confirm,Bill.cremark AS cremark,Category.name AS categoryname,Conference.name AS conferencename,Oncebudget.name AS oncebudgetname,Special.name AS specialname,Train.name AS trainname,Contract.name AS contractname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname,Instaff.name AS instaffname,Chestaff.name AS chestaffname FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.sectionid = 1 AND Bill.termid = 3 ORDER BY Bill.id desc LIMIT 0,50   [ RunTime:0.0043s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000362s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047431s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001659s ]
+
+[ 2016-01-13T17:22:34+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Specialother/audit&_=1452676954471
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `hg_section` WHERE `unitid` = 1 ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `hg_special_other` [ RunTime:0.0043s ]
+SQL: SELECT DISTINCT  `year` FROM `hg_special_other` WHERE `unitid` = 1 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `hg_unit` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_special_other SpecialOther  JOIN hg_staff Staff ON SpecialOther.staffid=Staff.id  JOIN hg_unit Unit ON SpecialOther.unitid=Unit.id  JOIN hg_section Section ON SpecialOther.sectionid=Section.id WHERE SpecialOther.unitid = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SpecialOther.id AS id,SpecialOther.name AS name,SpecialOther.year AS year,SpecialOther.money AS money,SpecialOther.unitid AS unitid,SpecialOther.sectionid AS sectionid,SpecialOther.staffid AS staffid,SpecialOther.remark AS remark,SpecialOther.timestamp AS timestamp,SpecialOther.confirm AS confirm,SpecialOther.confirmmoney AS confirmmoney,SpecialOther.cremark AS cremark,SpecialOther.used AS used,Staff.name AS staffname,Unit.name AS unitname,Section.name AS sectionname FROM hg_special_other SpecialOther  JOIN hg_staff Staff ON SpecialOther.staffid=Staff.id  JOIN hg_unit Unit ON SpecialOther.unitid=Unit.id  JOIN hg_section Section ON SpecialOther.sectionid=Section.id WHERE SpecialOther.unitid = 1 ORDER BY SpecialOther.id desc LIMIT 0,50   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+NOTIC: [8] Undefined variable: categorylist D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 19 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\51cbdef7e119b05f3efb8804cbd5f352.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017345s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017433s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000442s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2016-01-13T17:22:35+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Bill/audit&_=1452676955503
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000864s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `hg_section` WHERE `unitid` = 1 ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `hg_term` ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `hg_category`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `hg_special` WHERE `year` = 2015  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: statu D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 455 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 456 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 457 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 459 行.
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `hg_conference` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `hg_oncebudget` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `hg_train` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = 1 AND Bill.termid = 3 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT Bill.id AS id,Bill.type AS type,Bill.projectid AS projectid,Bill.orderid AS orderid,Bill.instaid AS instaid,Bill.sectionid AS sectionid,Bill.staffid AS staffid,Bill.money AS money,Bill.remark AS remark,Bill.timestamp AS timestamp,Bill.termid AS termid,Bill.status AS status,Bill.chestaid AS chestaid,Bill.unitid AS unitid,Bill.confirm AS confirm,Bill.cremark AS cremark,Category.name AS categoryname,Conference.name AS conferencename,Oncebudget.name AS oncebudgetname,Special.name AS specialname,Train.name AS trainname,Contract.name AS contractname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname,Instaff.name AS instaffname,Chestaff.name AS chestaffname FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = 1 AND Bill.termid = 3 ORDER BY Bill.id desc LIMIT 0,50   [ RunTime:0.0036s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+NOTIC: [8] Undefined index: orderid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 77 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 96 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 97 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 98 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 99 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 100 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 101 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 120 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 121 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 122 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016688s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000517s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000564s ]
+
+[ 2016-01-13T17:22:40+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Bill/audit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `hg_section` WHERE `unitid` = 1 ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `hg_term` ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `hg_category`  [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `hg_term` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `hg_special` WHERE `year` = 2015  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cat_proid D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 458 行.
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `hg_conference` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `hg_oncebudget` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `hg_train` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = 1 AND Bill.termid = '3' AND Bill.type = '0' LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT Bill.id AS id,Bill.type AS type,Bill.projectid AS projectid,Bill.orderid AS orderid,Bill.instaid AS instaid,Bill.sectionid AS sectionid,Bill.staffid AS staffid,Bill.money AS money,Bill.remark AS remark,Bill.timestamp AS timestamp,Bill.termid AS termid,Bill.status AS status,Bill.chestaid AS chestaid,Bill.unitid AS unitid,Bill.confirm AS confirm,Bill.cremark AS cremark,Category.name AS categoryname,Conference.name AS conferencename,Oncebudget.name AS oncebudgetname,Special.name AS specialname,Train.name AS trainname,Contract.name AS contractname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname,Instaff.name AS instaffname,Chestaff.name AS chestaffname FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = 1 AND Bill.termid = '3' AND Bill.type = '0' ORDER BY Bill.id desc LIMIT 0,50   [ RunTime:0.0070s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 120 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 121 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 122 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013690s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000515s ]
+
+[ 2016-01-13T17:22:46+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Bill/audit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `hg_section` WHERE `unitid` = 1 ORDER BY id asc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `hg_term` ORDER BY id asc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `hg_category`  [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `hg_term` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `hg_special` WHERE `year` = 2015  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cat_proid D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 458 行.
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `hg_conference` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `hg_oncebudget` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `hg_train` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = 1 AND Bill.termid = '3' AND Bill.type = '0' LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT Bill.id AS id,Bill.type AS type,Bill.projectid AS projectid,Bill.orderid AS orderid,Bill.instaid AS instaid,Bill.sectionid AS sectionid,Bill.staffid AS staffid,Bill.money AS money,Bill.remark AS remark,Bill.timestamp AS timestamp,Bill.termid AS termid,Bill.status AS status,Bill.chestaid AS chestaid,Bill.unitid AS unitid,Bill.confirm AS confirm,Bill.cremark AS cremark,Category.name AS categoryname,Conference.name AS conferencename,Oncebudget.name AS oncebudgetname,Special.name AS specialname,Train.name AS trainname,Contract.name AS contractname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname,Instaff.name AS instaffname,Chestaff.name AS chestaffname FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = 1 AND Bill.termid = '3' AND Bill.type = '0' ORDER BY Bill.id desc LIMIT 0,50   [ RunTime:0.0049s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 120 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 121 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 122 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013886s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013943s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000457s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000502s ]
+
+[ 2016-01-13T17:23:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677010
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000844s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2016-01-13T17:24:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677070
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001112s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001236s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001747s ]
+
+[ 2016-01-13T17:25:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677130
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000919s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001037s ]
+
+[ 2016-01-13T17:26:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677190
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000994s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001249s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000843s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000974s ]
+
+[ 2016-01-13T17:27:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677250
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000977s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001083s ]
+
+[ 2016-01-13T17:28:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677310
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000662s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2016-01-13T17:28:41+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Bill/audit&_=1452677321071
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `hg_section` WHERE `unitid` = 1 ORDER BY id asc  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `hg_term` ORDER BY id asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `hg_category`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `hg_special` WHERE `year` = 2015  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: statu D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 455 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 456 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 457 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 459 行.
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `hg_conference` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `hg_oncebudget` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `hg_train` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0053s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = 1 AND Bill.termid = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT Bill.id AS id,Bill.type AS type,Bill.projectid AS projectid,Bill.orderid AS orderid,Bill.instaid AS instaid,Bill.sectionid AS sectionid,Bill.staffid AS staffid,Bill.money AS money,Bill.remark AS remark,Bill.timestamp AS timestamp,Bill.termid AS termid,Bill.status AS status,Bill.chestaid AS chestaid,Bill.unitid AS unitid,Bill.confirm AS confirm,Bill.cremark AS cremark,Category.name AS categoryname,Conference.name AS conferencename,Oncebudget.name AS oncebudgetname,Special.name AS specialname,Train.name AS trainname,Contract.name AS contractname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname,Instaff.name AS instaffname,Chestaff.name AS chestaffname FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = 1 AND Bill.termid = 3 ORDER BY Bill.id desc LIMIT 0,50   [ RunTime:0.0033s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8] Undefined index: orderid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 77 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 96 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 97 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 98 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 99 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 100 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 101 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 120 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 121 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 122 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013532s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000481s ]
+
+[ 2016-01-13T17:29:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677370
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000760s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000848s ]
+
+[ 2016-01-13T17:30:29+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677430
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001122s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001264s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001243s ]
+
+[ 2016-01-13T17:31:30+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677490
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001111s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001060s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001167s ]
+
+[ 2016-01-13T17:32:30+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer/1452677550
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000811s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000908s ]
+

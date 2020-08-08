@@ -1,0 +1,82 @@
+<include file="Public:pageForm" />
+<div>
+	<div layoutH="0" style="float:left; display:block; overflow:auto; width:20%; border:solid 1px #CCC; line-height:21px">
+	    <ul class="tree treeFolder">
+			<li><a href="#">成都海关</a>
+				<ul>
+					<foreach name="unitlist" item="vo">
+						<li><a href="__ACTION__/unitid/<{$vo.id}>"  target="navtab" rel="Staffindex"><eq name="vo.id" value="$Think.request.unitid"><b><{$vo.name}></b><else/><{$vo.name}></eq></a></li>
+					</foreach>
+				</ul>
+			</li>
+	     </ul>
+	</div>
+</div>
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<input type="hidden" name="unitid" value="<{$Think.request.unitid}>">
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+			<empty name="Think.request.unitid"><else/>
+				<td>
+					姓名:<input type="text" name="name" value="<{$Think.post.name}>"/>
+				</td>
+				<td>
+					<select class="combox" name="sectionid">
+						<option value="">所有部门</option>
+						<foreach name="sectionlist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.sectionid"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</empty>
+			<td></td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<empty name="Think.request.unitid"><else/>
+			<li><a class="add" href="__URL__/add/unitid/<{$Think.request.unitid}>" height="400" target="dialog" rel="Staffadd"><span>添加员工</span></a></li>
+			<li><a class="delete" href="__URL__/delete/id/{item_id}/navTabId/Staffindex" target="ajaxTodo" title="确定要删除吗?"><span>删除员工</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{item_id}" height="400" target="dialog" rel="Staffedit"><span>修改员工</span></a></li>
+			<li><a class="edit" href="__URL__/editpass/id/{item_id}" target="dialog"><span>重置密码</span></a></li>
+			</empty>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="114">
+		<thead>
+			<tr>
+				<th width="80">ID</th>
+				<th width="200">姓名</th>
+				<th width="100">工号</th>
+				<th width="100">等级</th>
+				<th width="100">部门</th>
+				<th width="100">单位</th>
+				<th>角色</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.name}></td>
+				<td><{$vo.number}></td>
+				<td><eq name="vo.level" value="1">处以下<else/>处级以上</eq></td>
+				<td><{$vo.sectionname}></td>
+				<td><{$vo.unitname}></td>
+				<td><{$vo.rolename}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

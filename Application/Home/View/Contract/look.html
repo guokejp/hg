@@ -1,0 +1,78 @@
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__ACTION__" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					是否专项:
+				</td>
+				<td>
+					<select class="combox" name="isother">
+						<option value="aa">请选择</option>
+						<option value="0" <eq name="Think.post.isother" value="0"> selected="selected" </eq>>专项</option>
+						<option value="1" <eq name="Think.post.isother" value="1"> selected="selected" </eq>>其它</option>
+					</select>
+				</td>
+				<td>
+					合同名称:<input type="text" name="name" value="<{$Think.post.name}>"/>
+				</td>
+				<td>
+					开始日期：<input type="text" name="starttime" class="date" value="<{$Think.post.starttime}>" readonly="true" />
+				</td>
+				<td>
+					结束日期：<input type="text" name="endtime" class="date" value="<{$Think.post.endtime}>" readonly="true" />
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add" height="500" rel="Contractadd" target="navtab"><span>添加计划</span></a></li>
+			<li><a class="delete" href="__URL__/delete/id/{item_id}/navTabId/Contractindex" target="ajaxTodo" title="确定要删除吗?"><span>删除计划</span></a></li>
+<!-- 			<li><a class="edit" href="__URL__/edit/id/{item_id}" rel="Contractedit" target="navtab"><span>修改计划</span></a></li> -->
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<th width="80">ID</th>
+				<th width="120">专项 / 其它计划名称</th>
+				<th>合同名称</th>
+				<th width="100">部门</th>
+				<th width="100">申请人</th>
+				<th width="100">工程金额</th>
+				<th width="100">货物金额</th>
+				<th width="100">服务金额</th>
+				<th width="100">添加时间</th>
+				<th width="80">状态</th>
+				<th width="80">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.specialname}></td>
+				<td><{$vo.name}></td>
+				<td><{$vo.sectionname}></td>
+				<td><{$vo.staffname}></td>
+				<td><eq name="vo.project" value="1"><{$vo.projectmoney}></eq></td>
+				<td><eq name="vo.goods" value="1"><{$vo.goodsmoney}></eq></td>
+				<td><eq name="vo.service" value="1"><{$vo.servicemoney}></eq></td>
+				<td><{$vo.timestamp|date="Y-m-d",###}></td>
+				<td><eq name="vo.status" value="0"><span style="color:red;"><b>未执行</b></span><else/><span style="color:green;"><b>已执行</b></span></eq></td>
+				<td><neq name="vo.status" value="0"><a href="__URL__/detail/id/<{$vo.id}>/isother/<{$vo.isother}>" target="dialog" height="600" width="1024" rel="Contractdetail"><span><b>[详情]</b></span></a></eq></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

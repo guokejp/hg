@@ -1,0 +1,68 @@
+<style type="text/css">
+    .zabtableinput{width:92%;height:100%;border-width: 0px;background-color:#F3F3FA; }
+    .changcolor{background-color:#E6E6F2;}
+</style>
+<div class="pageContent" layoutH="0" >
+    <form method="post" autocomplete="off" action="__URL__/usesave/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+    <h4 style="margin-left:300px;margin-bottom:0px;font-size:1.7em;letter-spacing:10px">收入支出更改表—行政（单位：万元）</h4>
+    <div style="width:1200px;margin-left:10px">
+        <div>
+            <div style="float:left">
+                <p>填报年份:<b><{$overlookdata.year}></b></p>
+            </div>
+        </div>
+        <div>
+            <div style="margin-left:30px;float:left">
+                <p>填报月份:<b><{$overlookdata.month}></b></p>
+            </div>
+        </div>
+        <div style="margin-left:30px;float:left">
+            <div style="float:left">
+                <p>填报单位:<b><{:session(C('ADMIN_AUTH_UNITNAME'))}></b></p>
+            </div>
+        </div>
+    </div>
+    <table width="900" border="1" style="border-collapse:collapse;margin-left:10px;clear:both">
+        <tr>
+            <td width="350" height="55" rowspan="2" align="center" valign="middle">资金科目</td>
+            <td colspan="2" align="center" valign="middle">实际收入</td>
+            <td colspan="2" align="center" valign="middle">实际支出</td>
+        </tr>
+        <tr>
+            <td align="center" valign="middle">调整上年结转</td>
+            <td align="center" valign="middle">当期实际收入</td>
+            <td align="center" valign="middle">结转资金支出</td>
+            <td align="center" valign="middle">当期收入支出</td>
+        </tr>
+        
+        <input type="hidden" name="overlook_id" value="<{$overlookdata.id}>">
+        <volist name="moneydata" id="money">
+            <input type="hidden" name="aa[<{$money.name_id}>][overlook_id]" value="<{$overlookdata.id}>">
+            <input type="hidden" name="aa[<{$money.name_id}>][name_id]" value="<{$money.name_id}>">
+            <tr>
+                <td height="25"><{$money.name}></td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][inlast]" value="<{$money.inlast}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][inthisadd]" value="<{$money.inthisadd}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][outjzout]" value="<{$money.outjzout}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][outthisout]" value="<{$money.outthisout}>">
+                </td>
+            </tr>
+        </volist>
+    </table>
+    
+    <div class="formBar">
+<ul style="float:left;margin-left:960px;">
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+            <li><div class="button"><div class="buttonContent"><button type="button" class="close">关闭</button></div></div></li>
+        </ul>
+    </div>
+    </form>
+</div>
+

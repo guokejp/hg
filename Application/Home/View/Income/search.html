@@ -1,0 +1,31 @@
+<include file="Public:pageForm" />
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="edit" href="__MODULE__/Catbudget/view/id/{item_id}" target="dialog"  width="850" height="550" rel="Catbudgetview"><span>查看明细</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="55">
+		<thead>
+			<tr>
+				<th>项目名称</th>
+				<th width="100">期初定额</th>
+				<th width="100">调整</th>
+				<th width="100">已用</th>
+				<th width="100">结余</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.categoryname}></td>
+				<td><{$vo.first}></td>
+				<td><{$vo.adjustment}></td>
+				<td><{$vo.used}></td>
+				<td><{$vo.money}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<!-- <include file="Public:panelBar" /> -->
+</div>

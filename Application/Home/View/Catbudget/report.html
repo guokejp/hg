@@ -1,0 +1,142 @@
+<script type="text/javascript">
+	$(function(){
+		$('#c_catrepch').find('option').remove();
+		var pcat=$('#p_catrepch').find('option:selected').val();
+		$.ajax({
+			url:"__URL__/get_c_cat",
+			type:'post',
+			data:{pid:pcat},
+			datatype:'json',
+			success:function(data){
+				if (data) {
+					$('#c_catrepch').show();
+					$('#c_catrepch').find('option').remove();
+					$('#c_catrepch').find('select').append("<option value=''>请选择</option>");
+					for (var i = 0; i < data.length; i++) {
+						$('#c_catrepch').find('select').append("<option value="+data[i]["id"]+">"+data[i]["name"]+"</option>");
+					}
+				}
+			},
+			error:function(data){
+				alertMsg.error('错误');
+			},
+		});
+
+		$('#p_catrepch').change(function(){
+			$('#c_catrepch').find('option').remove();
+			$('#c_catrepch').hide();
+			var pcat=$('#p_catrepch').find('option:selected').val();
+			$.ajax({
+				url:"__URL__/get_c_cat",
+				type:'post',
+				data:{pid:pcat},
+				datatype:'json',
+				success:function(data){
+					if (data) {
+						$('#c_catrepch').show();
+						$('#c_catrepch').find('option').remove();
+						$('#c_catrepch').find('select').append("<option value=''>请选择</option>");
+						for (var i = 0; i < data.length; i++) {
+							$('#c_catrepch').find('select').append("<option value="+data[i]["id"]+">"+data[i]["name"]+"</option>");
+						}
+					}
+				},
+				error:function(data){
+					alert('错误');
+				},
+			});
+		})
+	})
+</script>
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					培训班名称：<input type="text" name="name" value="<{$Think.post.name}>"/>
+				</td>
+				<td>部门：</td>
+				<td>
+					<select class="combox" name="sectionid">
+						<option value="">所有部门</option>
+						<foreach name="sectionlist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.sectionid"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>包干：</td>
+				<td>
+					<select class="combox" name="pcat" id='p_catrepch'>
+						<option value="">请选择</option>
+						<foreach name="pcat" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.pcat"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td id='c_catrepch'>
+					<select name="ccat">
+						
+					</select>
+				</td>
+
+				<td>财务账期：</td>
+				<td>
+					<select class="combox" name="termid">
+						<foreach name="termlist" item="vo">
+							<option value="<{$vo.id}>" <empty name="Think.post.termid"><eq name="vo.id" value="$Think.session.DFHGFf3456DJ"> selected="selected" </eq><else/><eq name="vo.id" value="$Think.post.termid"> selected="selected" </eq></empty>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/view/id/{item_id}" target="dialog" rel="Catbudgetview" width="850" height="550"><span>详情查看</span></a></li>
+			<li><a class="edit" href="__URL__/get_cailv"  target="navtab" rel="Catbudgetget_cailv"><span>查看差旅单</span></a></li>
+			<li><a class="add" href="__URL__/catbud_look" target="_blank"><span>查看包干详情</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="85">
+		<thead>
+			<tr>
+				<th width="120">部门</th>
+				<th>科目</th>
+				<th width="100">期初定额</th>
+				<th width="100">调整</th>
+				<th width="100">已用</th>
+				<th width="100">结余</th>
+				<th width="100">已审核报销单</th>
+				<th width="100">未审核报销单</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.sectionname}></td>
+				<td><{$vo.categoryname}></td>
+				<td><{$vo.first}></td>
+				<td><{$vo.adjustment}></td>
+				<td><{$vo.used}></td>
+				<td><{$vo.money}></td>
+				<td>
+					<a class="add" href="__URL__/getcheck/way/be_cvheck/id/<{$vo.id}>" target="dialog" rel="Catbudgetbe_cvheck" width="1000" height="550"><span style="color: blue"><{$vo.ched_amon}></span></a>
+				</td>
+				<td>
+					<a class="add" href="__URL__/getcheck/way/no_cvheck/id/<{$vo.id}>" target="dialog" rel="Catbudgetbe_cvheck" width="1000" height="550"><span style="color: red"><{$vo.noched_amon}></span></a>
+				</td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

@@ -1,0 +1,86 @@
+
+<style type="text/css">
+    .zabtableinput{width:92%;height:100%;border-width: 0px;background-color:#F3F3FA; }
+    .changcolor{background-color:#E6E6F2;}
+</style>
+<div class="pageContent" layoutH="0" >
+    <form method="post" autocomplete="off" action="__URL__/budgetsave/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+    <h4 style="margin-left:300px;margin-bottom:0px;font-size:1.7em;letter-spacing:10px">“五项费用”控制额度更改表（单位：万元）</h4>
+    <div style="width:1200px;margin-left:10px">
+        <div>
+            <div style="float:left">
+                <p>填报年份:<b><{$overlookdata.year}></b></p>
+            </div>
+        </div>
+        <div style="margin-left:30px;float:left">
+            <div style="float:left">
+                <p>填报单位:<b><{:session(C('ADMIN_AUTH_UNITNAME'))}></b></p>
+            </div>
+        </div>
+    </div>
+    <table width="1270" border="1" style="border-collapse:collapse;margin-left:10px;clear:both">
+        <tr>
+            <td width="90" rowspan="4" align="center" valign="middle">项目</td>
+            <td height="19" colspan="8" align="center" valign="middle">控制额度数</td>
+        </tr>
+        <tr>
+            <td height="20" colspan="6" align="center" valign="middle">控制套帐</td>
+            <td colspan="2" align="center" valign="middle">地方套帐</td>
+        </tr>
+        <tr>
+            <td height="20" colspan="4" align="center" valign="middle">财政</td>
+            <td colspan="2" align="center" valign="middle">非财政</td>
+            <td width="70" rowspan="2">地方</td>
+            <td width="70" rowspan="2">转移支付</td>
+        </tr>
+        <tr>
+            <td width="70" height="20" align="center" valign="middle">行政运行</td>
+            <td width="70">缉私办案</td>
+            <td width="70">收费业务</td>
+            <td width="70">其它</td>
+            <td width="70">其它收支</td>
+            <td width="70">地方专项</td>
+        </tr>
+        
+        <input type="hidden" name="overlook_id" value="<{$overlookdata.id}>">
+        <volist name="moneydata" id="money">
+            <input type="hidden" name="aa[<{$money.name_id}>][overlook_id]" value="<{$overlookdata.id}>">
+            <input type="hidden" name="aa[<{$money.name_id}>][name_id]" value="<{$money.name_id}>">
+            <tr class="changcolor">
+                <td height="25"><{$money.name}></td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][czyunxing]" value="<{$money.czyunxing}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][czjishi]" value="<{$money.czjishi}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][czshoufei]" value="<{$money.czshoufei}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][czother]" value="<{$money.czother}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][nczotherin]" value="<{$money.nczotherin}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][nczdfzx]" value="<{$money.nczdfzx}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][dfdf]" value="<{$money.dfdf}>">
+                </td>
+                <td>
+                    <input type="text" class="number zabtableinput" name="aa[<{$money.name_id}>][dfzypay]" value="<{$money.dfzypay}>">
+                </td>
+            </tr>
+        </volist>
+    </table>
+    <div class="formBar">
+<ul style="float:left;margin-left:970px;">
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+            <li><div class="button"><div class="buttonContent"><button type="button" class="close">关闭</button></div></div></li>
+        </ul>
+    </div>
+    </form>
+</div>
+

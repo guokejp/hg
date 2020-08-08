@@ -1,0 +1,31 @@
+<include file="Public:pageForm" />
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="delete" href="__URL__/incTerm/navTabId/Termindex" target="ajaxTodo" title="确定要结转账期吗?"><span>结转账期</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="77">
+		<thead>
+			<tr>
+				<th width="80">ID</th>
+				<th width="200">账期</th>
+				<th>状态</th>
+				<th width="100">操作人</th>
+				<th width="100">结转时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.name}></td>
+				<td><eq name="vo.status" value="1"><b><span>当前账期</span></b><else/><span>已结转</span></eq></td>
+				<td><{$vo.staffname}></td>
+				<td><{$vo.timestamp|date="Y-m-d",###}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

@@ -1,0 +1,764 @@
+<?php if (!defined('THINK_PATH')) exit();?><script>
+function zaugetadd($a){
+    var input5=Number($('#zau'+$a+5).val());
+    var input6=Number($('#zau'+$a+6).val());
+    var input8=Number($('#zau'+$a+8).val());
+    var input9=Number($('#zau'+$a+9).val());
+    $('#zau'+$a+4).val((input5+input6).toFixed(2));
+    $('#zau'+$a+7).val((input8+input9).toFixed(2));
+}
+$(".zautableinput").keyup(function() {
+    var la5=Number($('#zaua5').val());
+    var la6=Number($('#zaua6').val());
+    var la8=Number($('#zaua8').val());
+    var la9=Number($('#zaua9').val());
+    var la7=Number(la8+la9);
+    var la4=Number(la5+la6);
+
+    var lb5=Number($('#zaub5').val());
+    var lb6=Number($('#zaub6').val());
+    var lb8=Number($('#zaub8').val());
+    var lb9=Number($('#zaub9').val());
+    var lb7=Number(lb8+lb9);
+    var lb4=Number(lb5+lb6);
+
+    var lc5=Number($('#zauc5').val());
+    var lc6=Number($('#zauc6').val());
+    var lc8=Number($('#zauc8').val());
+    var lc9=Number($('#zauc9').val());
+    var lc7=Number(lc8+lc9);
+    var lc4=Number(lc5+lc6);
+
+    var ld5=Number($('#zaud5').val());
+    var ld6=Number($('#zaud6').val());
+    var ld8=Number($('#zaud8').val());
+    var ld9=Number($('#zaud9').val());
+    var ld7=Number(ld8+ld9);
+    var ld4=Number(ld5+ld6);
+
+    var le5=Number($('#zaue5').val());
+    var le6=Number($('#zaue6').val());
+    var le8=Number($('#zaue8').val());
+    var le9=Number($('#zaue9').val());
+    var le7=Number(le8+le9);
+    var le4=Number(le5+le6);
+
+    var lf5=Number($('#zauf5').val());
+    var lf6=Number($('#zauf6').val());
+    var lf8=Number($('#zauf8').val());
+    var lf9=Number($('#zauf9').val());
+    var lf7=Number(lf8+lf9);
+    var lf4=Number(lf5+lf6);
+
+    var lg5=Number($('#zaug5').val());
+    var lg6=Number($('#zaug6').val());
+    var lg8=Number($('#zaug8').val());
+    var lg9=Number($('#zaug9').val());
+    var lg7=Number(lg8+lg9);
+    var lg4=Number(lg5+lg6);
+
+    var lh5=Number($('#zauh5').val());
+    var lh6=Number($('#zauh6').val());
+    var lh8=Number($('#zauh8').val());
+    var lh9=Number($('#zauh9').val());
+    var lh7=Number(lh8+lh9);
+    var lh4=Number(lh5+lh6);
+
+    var li5=Number($('#zaui5').val());
+    var li6=Number($('#zaui6').val());
+    var li8=Number($('#zaui8').val());
+    var li9=Number($('#zaui9').val());
+    var li7=Number(li8+li9);
+    var li4=Number(li5+li6);
+
+    var lj5=Number($('#zauj5').val());
+    var lj6=Number($('#zauj6').val());
+    var lj8=Number($('#zauj8').val());
+    var lj9=Number($('#zauj9').val());
+    var lj7=Number(lj8+lj9);
+    var lj4=Number(lj5+lj6);
+
+    var lk5=Number($('#zauk5').val());
+    var lk6=Number($('#zauk6').val());
+    var lk8=Number($('#zauk8').val());
+    var lk9=Number($('#zauk9').val());
+    var lk7=Number(lk8+lk9);
+    var lk4=Number(lk5+lk6);
+
+    var ll5=Number($('#zaul5').val());
+    var ll6=Number($('#zaul6').val());
+    var ll8=Number($('#zaul8').val());
+    var ll9=Number($('#zaul9').val());
+    var ll7=Number(ll8+ll9);
+    var ll4=Number(ll5+ll6);
+
+    var lm5=Number($('#zaum5').val());
+    var lm6=Number($('#zaum6').val());
+    var lm8=Number($('#zaum8').val());
+    var lm9=Number($('#zaum9').val());
+    var lm7=Number(lm8+lm9);
+    var lm4=Number(lm5+lm6);
+
+    var ln5=Number($('#zaun5').val());
+    var ln6=Number($('#zaun6').val());
+    var ln8=Number($('#zaun8').val());
+    var ln9=Number($('#zaun9').val());
+    var ln7=Number(ln8+ln9);
+    var ln4=Number(ln5+ln6);
+   $('#zauo4').val((la4+lb4+lc4+ld4+le4+lf4+lg4+lh4+li4+lj4+lk4+ll4+lm4+ln4).toFixed(2));
+    $('#zauo7').val((la7+lb7+lc7+ld7+le7+lf7+lg7+lh7+li7+lj7+lk7+ll7+lm7+ln7).toFixed(2));
+    $('#zauo5').val((la5+lb5+lc5+ld5+le5+lf5+lg5+lh5+li5+lj5+lk5+ll5+lm5+ln5).toFixed(2));
+    $('#zauo6').val((la6+lb6+lc6+ld6+le6+lf6+lg6+lh6+li6+lj6+lk6+ll6+lm6+ln6).toFixed(2));
+    $('#zauo8').val((la8+lb8+lc8+ld8+le8+lf8+lg8+lh8+li8+lj8+lk8+ll8+lm8+ln8).toFixed(2));
+    $('#zauo9').val((la9+lb9+lc9+ld9+le9+lf9+lg9+lh9+li9+lj9+lk9+ll9+lm9+ln9).toFixed(2));
+
+    var lp5=Number($('#zaup5').val());
+    var lp6=Number($('#zaup6').val());
+    var lp8=Number($('#zaup8').val());
+    var lp9=Number($('#zaup9').val());
+    var lp7=Number(lp8+lp9);
+    var lp4=Number(lp5+lp6);
+
+    var lq5=Number($('#zauq5').val());
+    var lq6=Number($('#zauq6').val());
+    var lq8=Number($('#zauq8').val());
+    var lq9=Number($('#zauq9').val());
+    var lq7=Number(lq8+lq9);
+    var lq4=Number(lq5+lq6);
+
+    var lr5=Number($('#zaur5').val());
+    var lr6=Number($('#zaur6').val());
+    var lr8=Number($('#zaur8').val());
+    var lr9=Number($('#zaur9').val());
+    var lr7=Number(lr8+lr9);
+    var lr4=Number(lr5+lr6);
+
+    var ls5=Number($('#zaus5').val());
+    var ls6=Number($('#zaus6').val());
+    var ls8=Number($('#zaus8').val());
+    var ls9=Number($('#zaus9').val());
+    var ls7=Number(ls8+ls9);
+    var ls4=Number(ls5+ls6);
+
+    var lt5=Number($('#zaut5').val());
+    var lt6=Number($('#zaut6').val());
+    var lt8=Number($('#zaut8').val());
+    var lt9=Number($('#zaut9').val());
+    var lt7=Number(lt8+lt9);
+    var lt4=Number(lt5+lt6);
+
+    var lu5=Number($('#zauu5').val());
+    var lu6=Number($('#zauu6').val());
+    var lu8=Number($('#zauu8').val());
+    var lu9=Number($('#zauu9').val());
+    var lu7=Number(lu8+lu9);
+    var lu4=Number(lu5+lu6);
+
+    var lv5=Number($('#zauv5').val());
+    var lv6=Number($('#zauv6').val());
+    var lv8=Number($('#zauv8').val());
+    var lv9=Number($('#zauv9').val());
+    var lv7=Number(lv8+lv9);
+    var lv4=Number(lv5+lv6);
+    $('#zauw4').val((lp4+lq4+lr4+ls4+lt4+lu4+lv4).toFixed(2));
+    $('#zauw7').val((lp7+lq7+lr7+ls7+lt7+lu7+lv7).toFixed(2));
+    $('#zauw5').val((lp5+lq5+lr5+ls5+lt5+lu5+lv5).toFixed(2));
+    $('#zauw6').val((lp6+lq6+lr6+ls6+lt6+lu6+lv6).toFixed(2));
+    $('#zauw8').val((lp8+lq8+lr8+ls8+lt8+lu8+lv8).toFixed(2));
+    $('#zauw9').val((lp9+lq9+lr9+ls9+lt9+lu9+lv9).toFixed(2));
+})
+
+
+</script>
+<style type="text/css">
+    .zautableinput{width:92%;height:100%;border-width: 0px;background-color:#F3F3FA; }
+    .changcolor{background-color:#E6E6F2;}
+</style>
+<div class="pageContent" layoutH="0" >
+    <form method="post" autocomplete="off" action="/hg/index.php?s=/Home/Zhixingadmin/useaddinsert/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+    <h4 style="margin-left:300px;margin-bottom:0px;font-size:1.7em;letter-spacing:10px">收入支出录入表—行政（单位：万元）</h4>
+    <div style="width:1200px;margin-left:10px">
+        <div>
+            <div style="float:left">
+                <p>填报年份:</p>
+            </div>
+            <div style="float:left">
+                <select name="year">
+                    <?php if(is_array($year)): $i = 0; $__LIST__ = $year;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$year): $mod = ($i % 2 );++$i;?><option value="<?php echo ($year["year"]); ?>"><?php echo ($year["year"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div style="float:left;margin-left:20px;">
+                <p>填报月份:</p>
+            </div>
+            <div style="float:left">
+                <select name="month" class="required">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+        </div>
+        <div style="margin-left:30px;float:left">
+            <div style="float:left">
+                <p>填报单位:<b><?php echo session(C('ADMIN_AUTH_UNITNAME'));?></b></p>
+            </div>
+        </div>
+    </div>
+    <table width="900" border="1" style="border-collapse:collapse;margin-left:10px;clear:both">
+        <tr>
+            <td width="80" height="55" rowspan="3" align="center" valign="middle">资金科目</td>
+            <td width="80" height="25">&nbsp;</td>
+            <td width="70">&nbsp;</td>
+            <td colspan="3" align="center" valign="middle">实际收入</td>
+            <td colspan="3" align="center" valign="middle">实际支出</td>
+        </tr>
+        <tr>
+            <td height="25">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td rowspan="2" align="center" valign="middle">合计</td>
+            <td rowspan="2" align="center" valign="middle">调整上年结转</td>
+            <td rowspan="2" align="center" valign="middle">当期实际收入</td>
+            <td rowspan="2" align="center" valign="middle">合计</td>
+            <td rowspan="2" align="center" valign="middle">结转资金支出</td>
+            <td rowspan="2" align="center" valign="middle">当期收入支出</td>
+        </tr>
+        <tr>
+            <td height="25" align="center" valign="middle">&nbsp;</td>
+            <td align="center" valign="middle">&nbsp;</td>
+        </tr>
+        
+        <tr>
+            <td rowspan="3" align="center" valign="middle">行政运行</td>
+            <td rowspan="2">定员定额</td>
+            <td height="25">人员经费</td>
+            <td>
+                <input type="text" name="aa[0]" class="number zautableinput" id="zaua4" onkeyup="zaugetadd('a')">
+            </td>
+            <td>
+                <input type="text" name="aa[1]" class="number zautableinput" id="zaua5" onkeyup="zaugetadd('a')">
+            </td>
+            <td>
+                <input type="text" name="aa[2]" class="number zautableinput" id="zaua6" onkeyup="zaugetadd('a')">
+            </td>
+            <td>
+                <input type="text" name="aa[3]" class="number zautableinput" id="zaua7" onkeyup="zaugetadd('a')">
+            </td>
+            <td>
+                <input type="text" name="aa[4]" class="number zautableinput" id="zaua8" onkeyup="zaugetadd('a')">
+            </td>
+            <td>
+                <input type="text" name="aa[5]" class="number zautableinput" id="zaua9" onkeyup="zaugetadd('a')">
+            </td>
+        </tr>
+        <tr>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="bb[0]" class="number zautableinput" id="zaub4" onkeyup="zaugetadd('b')">
+            </td>
+            <td>
+                <input type="text" name="bb[1]" class="number zautableinput" id="zaub5" onkeyup="zaugetadd('b')">
+            </td>
+            <td>
+                <input type="text" name="bb[2]" class="number zautableinput" id="zaub6" onkeyup="zaugetadd('b')">
+            </td>
+            <td>
+                <input type="text" name="bb[3]" class="number zautableinput" id="zaub7" onkeyup="zaugetadd('b')">
+            </td>
+            <td>
+                <input type="text" name="bb[4]" class="number zautableinput" id="zaub8" onkeyup="zaugetadd('b')">
+            </td>
+            <td>
+                <input type="text" name="bb[5]" class="number zautableinput" id="zaub9" onkeyup="zaugetadd('b')">
+            </td>
+        </tr>
+        <tr>
+            <td>定项</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="cc[0]" class="number zautableinput" id="zauc4" onkeyup="zaugetadd('c')">
+            </td>
+            <td>
+                <input type="text" name="cc[1]" class="number zautableinput" id="zauc5" onkeyup="zaugetadd('c')">
+            </td>
+            <td>
+                <input type="text" name="cc[2]" class="number zautableinput" id="zauc6" onkeyup="zaugetadd('c')">
+            </td>
+            <td>
+                <input type="text" name="cc[3]" class="number zautableinput" id="zauc7" onkeyup="zaugetadd('c')">
+            </td>
+            <td>
+                <input type="text" name="cc[4]" class="number zautableinput" id="zauc8" onkeyup="zaugetadd('c')">
+            </td>
+            <td>
+                <input type="text" name="cc[5]" class="number zautableinput" id="zauc9" onkeyup="zaugetadd('c')">
+            </td>
+        </tr>
+        <tr>
+            <td>离退休</td>
+            <td>&nbsp;</td>
+            <td height="25">人员经费</td>
+            <td>
+                <input type="text" name="dd[0]" class="number zautableinput" id="zaud4" onkeyup="zaugetadd('d')">
+            </td>
+            <td>
+                <input type="text" name="dd[1]" class="number zautableinput" id="zaud5" onkeyup="zaugetadd('d')">
+            </td>
+            <td>
+                <input type="text" name="dd[2]" class="number zautableinput" id="zaud6" onkeyup="zaugetadd('d')">
+            </td>
+            <td>
+                <input type="text" name="dd[3]" class="number zautableinput" id="zaud7" onkeyup="zaugetadd('d')">
+            </td>
+            <td>
+                <input type="text" name="dd[4]" class="number zautableinput" id="zaud8" onkeyup="zaugetadd('d')">
+            </td>
+            <td>
+                <input type="text" name="dd[5]" class="number zautableinput" id="zaud9" onkeyup="zaugetadd('d')">
+            </td>
+        </tr>
+        <tr>
+            <td>住房公积金</td>
+            <td>&nbsp;</td>
+            <td height="25">人员经费</td>
+            <td>
+                <input type="text" name="ee[0]" class="number zautableinput" id="zaue4" onkeyup="zaugetadd('e')">
+            </td>
+            <td>
+                <input type="text" name="ee[1]" class="number zautableinput" id="zaue5" onkeyup="zaugetadd('e')">
+            </td>
+            <td>
+                <input type="text" name="ee[2]" class="number zautableinput" id="zaue6" onkeyup="zaugetadd('e')">
+            </td>
+            <td>
+                <input type="text" name="ee[3]" class="number zautableinput" id="zaue7" onkeyup="zaugetadd('e')">
+            </td>
+            <td>
+                <input type="text" name="ee[4]" class="number zautableinput" id="zaue8" onkeyup="zaugetadd('e')">
+            </td>
+            <td>
+                <input type="text" name="ee[5]" class="number zautableinput" id="zaue9" onkeyup="zaugetadd('e')">
+            </td>
+        </tr>
+        <tr>
+            <td>购房补贴</td>
+            <td>&nbsp;</td>
+            <td height="25">人员经费</td>
+            <td>
+                <input type="text" name="ff[0]" class="number zautableinput" id="zauf4" onkeyup="zaugetadd('f')">
+            </td>
+            <td>
+                <input type="text" name="ff[1]" class="number zautableinput" id="zauf5" onkeyup="zaugetadd('f')">
+            </td>
+            <td>
+                <input type="text" name="ff[2]" class="number zautableinput" id="zauf6" onkeyup="zaugetadd('f')">
+            </td>
+            <td>
+                <input type="text" name="ff[3]" class="number zautableinput" id="zauf7" onkeyup="zaugetadd('f')">
+            </td>
+            <td>
+                <input type="text" name="ff[4]" class="number zautableinput" id="zauf8" onkeyup="zaugetadd('f')">
+            </td>
+            <td>
+                <input type="text" name="ff[5]" class="number zautableinput" id="zauf9" onkeyup="zaugetadd('f')">
+            </td>
+        </tr>
+        <tr>
+            <td>一般行政事务</td>
+            <td>中央财政专项</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="gg[0]" class="number zautableinput" id="zaug4" onkeyup="zaugetadd('g')">
+            </td>
+            <td>
+                <input type="text" name="gg[1]" class="number zautableinput" id="zaug5" onkeyup="zaugetadd('g')">
+            </td>
+            <td>
+                <input type="text" name="gg[2]" class="number zautableinput" id="zaug6" onkeyup="zaugetadd('g')">
+            </td>
+            <td>
+                <input type="text" name="gg[3]" class="number zautableinput" id="zaug7" onkeyup="zaugetadd('g')">
+            </td>
+            <td>
+                <input type="text" name="gg[4]" class="number zautableinput" id="zaug8" onkeyup="zaugetadd('g')">
+            </td>
+            <td>
+                <input type="text" name="gg[5]" class="number zautableinput" id="zaug9" onkeyup="zaugetadd('g')">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">缉私办案费</td>
+            <td>定员定额</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="hh[0]" class="number zautableinput" id="zauh4" onkeyup="zaugetadd('h')">
+            </td>
+            <td>
+                <input type="text" name="hh[1]" class="number zautableinput" id="zauh5" onkeyup="zaugetadd('h')">
+            </td>
+            <td>
+                <input type="text" name="hh[2]" class="number zautableinput" id="zauh6" onkeyup="zaugetadd('h')">
+            </td>
+            <td>
+                <input type="text" name="hh[3]" class="number zautableinput" id="zauh7" onkeyup="zaugetadd('h')">
+            </td>
+            <td>
+                <input type="text" name="hh[4]" class="number zautableinput" id="zauh8" onkeyup="zaugetadd('h')">
+            </td>
+            <td>
+                <input type="text" name="hh[5]" class="number zautableinput" id="zauh9" onkeyup="zaugetadd('h')">
+            </td>
+        </tr>
+        <tr>
+            <td>单项</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="ii[0]" class="number zautableinput" id="zaui4" onkeyup="zaugetadd('i')">
+            </td>
+            <td>
+                <input type="text" name="ii[1]" class="number zautableinput" id="zaui5" onkeyup="zaugetadd('i')">
+            </td>
+            <td>
+                <input type="text" name="ii[2]" class="number zautableinput" id="zaui6" onkeyup="zaugetadd('i')">
+            </td>
+            <td>
+                <input type="text" name="ii[3]" class="number zautableinput" id="zaui7" onkeyup="zaugetadd('i')">
+            </td>
+            <td>
+                <input type="text" name="ii[4]" class="number zautableinput" id="zaui8" onkeyup="zaugetadd('i')">
+            </td>
+            <td>
+                <input type="text" name="ii[5]" class="number zautableinput" id="zaui9" onkeyup="zaugetadd('i')">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">收费业务费</td>
+            <td>定员定额</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="jj[0]" class="number zautableinput" id="zauj4" onkeyup="zaugetadd('j')">
+            </td>
+            <td>
+                <input type="text" name="jj[1]" class="number zautableinput" id="zauj5" onkeyup="zaugetadd('j')">
+            </td>
+            <td>
+                <input type="text" name="jj[2]" class="number zautableinput" id="zauj6" onkeyup="zaugetadd('j')">
+            </td>
+            <td>
+                <input type="text" name="jj[3]" class="number zautableinput" id="zauj7" onkeyup="zaugetadd('j')">
+            </td>
+            <td>
+                <input type="text" name="jj[4]" class="number zautableinput" id="zauj8" onkeyup="zaugetadd('j')">
+            </td>
+            <td>
+                <input type="text" name="jj[5]" class="number zautableinput" id="zauj9" onkeyup="zaugetadd('j')">
+            </td>
+        </tr>
+        <tr>
+            <td>单项</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="kk[0]" class="number zautableinput" id="zauk4" onkeyup="zaugetadd('k')">
+            </td>
+            <td>
+                <input type="text" name="kk[1]" class="number zautableinput" id="zauk5" onkeyup="zaugetadd('k')">
+            </td>
+            <td>
+                <input type="text" name="kk[2]" class="number zautableinput" id="zauk6" onkeyup="zaugetadd('k')">
+            </td>
+            <td>
+                <input type="text" name="kk[3]" class="number zautableinput" id="zauk7" onkeyup="zaugetadd('k')">
+            </td>
+            <td>
+                <input type="text" name="kk[4]" class="number zautableinput" id="zauk8" onkeyup="zaugetadd('k')">
+            </td>
+            <td>
+                <input type="text" name="kk[5]" class="number zautableinput" id="zauk9" onkeyup="zaugetadd('k')">
+            </td>
+        </tr>
+        <tr>
+            <td>金关工程</td>
+            <td>&nbsp;</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="ll[0]" class="number zautableinput" id="zaul4" onkeyup="zaugetadd('l')">
+            </td>
+            <td>
+                <input type="text" name="ll[1]" class="number zautableinput" id="zaul5" onkeyup="zaugetadd('l')">
+            </td>
+            <td>
+                <input type="text" name="ll[2]" class="number zautableinput" id="zaul6" onkeyup="zaugetadd('l')">
+            </td>
+            <td>
+                <input type="text" name="ll[3]" class="number zautableinput" id="zaul7" onkeyup="zaugetadd('l')">
+            </td>
+            <td>
+                <input type="text" name="ll[4]" class="number zautableinput" id="zaul8" onkeyup="zaugetadd('l')">
+            </td>
+            <td>
+                <input type="text" name="ll[5]" class="number zautableinput" id="zaul9" onkeyup="zaugetadd('l')">
+            </td>
+        </tr>
+        <tr>
+            <td>政府基金</td>
+            <td>&nbsp;</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="mm[0]" class="number zautableinput" id="zaum4" onkeyup="zaugetadd('m')">
+            </td>
+            <td>
+                <input type="text" name="mm[1]" class="number zautableinput" id="zaum5" onkeyup="zaugetadd('m')">
+            </td>
+            <td>
+                <input type="text" name="mm[2]" class="number zautableinput" id="zaum6" onkeyup="zaugetadd('m')">
+            </td>
+            <td>
+                <input type="text" name="mm[3]" class="number zautableinput" id="zaum7" onkeyup="zaugetadd('m')">
+            </td>
+            <td>
+                <input type="text" name="mm[4]" class="number zautableinput" id="zaum8" onkeyup="zaugetadd('m')">
+            </td>
+            <td>
+                <input type="text" name="mm[5]" class="number zautableinput" id="zaum9" onkeyup="zaugetadd('m')">
+            </td>
+        </tr>
+        <tr>
+            <td>其它</td>
+            <td>&nbsp;</td>
+            <td height="25">日常公用</td>
+            <td>
+                <input type="text" name="nn[0]" class="number zautableinput" id="zaun4" onkeyup="zaugetadd('n')">
+            </td>
+            <td>
+                <input type="text" name="nn[1]" class="number zautableinput" id="zaun5" onkeyup="zaugetadd('n')">
+            </td>
+            <td>
+                <input type="text" name="nn[2]" class="number zautableinput" id="zaun6" onkeyup="zaugetadd('n')">
+            </td>
+            <td>
+                <input type="text" name="nn[3]" class="number zautableinput" id="zaun7" onkeyup="zaugetadd('n')">
+            </td>
+            <td>
+                <input type="text" name="nn[4]" class="number zautableinput" id="zaun8" onkeyup="zaugetadd('n')">
+            </td>
+            <td>
+                <input type="text" name="nn[5]" class="number zautableinput" id="zaun9" onkeyup="zaugetadd('n')">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center" valign="middle">财政资金合计</td>
+            <td height="25">&nbsp;</td>
+            <td>
+                <input type="text" name="oo[0]" class="number zautableinput" id="zauo4" onkeyup="zaugetadd('o')">
+            </td>
+            <td>
+                <input type="text" name="oo[1]" class="number zautableinput" id="zauo5" onkeyup="zaugetadd('o')">
+            </td>
+            <td>
+                <input type="text" name="oo[2]" class="number zautableinput" id="zauo6" onkeyup="zaugetadd('o')">
+            </td>
+            <td>
+                <input type="text" name="oo[3]" class="number zautableinput" id="zauo7" onkeyup="zaugetadd('o')">
+            </td>
+            <td>
+                <input type="text" name="oo[4]" class="number zautableinput" id="zauo8" onkeyup="zaugetadd('o')">
+            </td>
+            <td>
+                <input type="text" name="oo[5]" class="number zautableinput" id="zauo9" onkeyup="zaugetadd('o')">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="4">海关套帐-其它资金</td>
+            <td rowspan="2">一般行政事务专项</td>
+            <td height="25">人员经费</td>
+            <td>
+                <input type="text" name="pp[0]" class="number zautableinput" id="zaup4" onkeyup="zaugetadd('p')">
+            </td>
+            <td>
+                <input type="text" name="pp[1]" class="number zautableinput" id="zaup5" onkeyup="zaugetadd('p')">
+            </td>
+            <td>
+                <input type="text" name="pp[2]" class="number zautableinput" id="zaup6" onkeyup="zaugetadd('p')">
+            </td>
+            <td>
+                <input type="text" name="pp[3]" class="number zautableinput" id="zaup7" onkeyup="zaugetadd('p')">
+            </td>
+            <td>
+                <input type="text" name="pp[4]" class="number zautableinput" id="zaup8" onkeyup="zaugetadd('p')">
+            </td>
+            <td>
+                <input type="text" name="pp[5]" class="number zautableinput" id="zaup9" onkeyup="zaugetadd('p')">
+            </td>
+        </tr>
+        <tr>
+            <td height="25">公用经费</td>
+            <td>
+                <input type="text" name="qq[0]" class="number zautableinput" id="zauq4" onkeyup="zaugetadd('q')">
+            </td>
+            <td>
+                <input type="text" name="qq[1]" class="number zautableinput" id="zauq5" onkeyup="zaugetadd('q')">
+            </td>
+            <td>
+                <input type="text" name="qq[2]" class="number zautableinput" id="zauq6" onkeyup="zaugetadd('q')">
+            </td>
+            <td>
+                <input type="text" name="qq[3]" class="number zautableinput" id="zauq7" onkeyup="zaugetadd('q')">
+            </td>
+            <td>
+                <input type="text" name="qq[4]" class="number zautableinput" id="zauq8" onkeyup="zaugetadd('q')">
+            </td>
+            <td>
+                <input type="text" name="qq[5]" class="number zautableinput" id="zauq9" onkeyup="zaugetadd('q')">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">其它收支</td>
+            <td height="25">人员经费</td>
+            <td>
+                <input type="text" name="rr[0]" class="number zautableinput" id="zaur4" onkeyup="zaugetadd('r')">
+            </td>
+            <td>
+                <input type="text" name="rr[1]" class="number zautableinput" id="zaur5" onkeyup="zaugetadd('r')">
+            </td>
+            <td>
+                <input type="text" name="rr[2]" class="number zautableinput" id="zaur6" onkeyup="zaugetadd('r')">
+            </td>
+            <td>
+                <input type="text" name="rr[3]" class="number zautableinput" id="zaur7" onkeyup="zaugetadd('r')">
+            </td>
+            <td>
+                <input type="text" name="rr[4]" class="number zautableinput" id="zaur8" onkeyup="zaugetadd('r')">
+            </td>
+            <td>
+                <input type="text" name="rr[5]" class="number zautableinput" id="zaur9" onkeyup="zaugetadd('r')">
+            </td>
+        </tr>
+        <tr>
+            <td height="25">公用经费</td>
+            <td>
+                <input type="text" name="ss[0]" class="number zautableinput" id="zaus4" onkeyup="zaugetadd('s')">
+            </td>
+            <td>
+                <input type="text" name="ss[1]" class="number zautableinput" id="zaus5" onkeyup="zaugetadd('s')">
+            </td>
+            <td>
+                <input type="text" name="ss[2]" class="number zautableinput" id="zaus6" onkeyup="zaugetadd('s')">
+            </td>
+            <td>
+                <input type="text" name="ss[3]" class="number zautableinput" id="zaus7" onkeyup="zaugetadd('s')">
+            </td>
+            <td>
+                <input type="text" name="ss[4]" class="number zautableinput" id="zaus8" onkeyup="zaugetadd('s')">
+            </td>
+            <td>
+                <input type="text" name="ss[5]" class="number zautableinput" id="zaus9" onkeyup="zaugetadd('s')">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="3">地方罚没账套-其它资金</td>
+            <td rowspan="2">地方套帐-地方罚没</td>
+            <td height="25">人员经费</td>
+            <td>
+                <input type="text" name="tt[0]" class="number zautableinput" id="zaut4" onkeyup="zaugetadd('t')">
+            </td>
+            <td>
+                <input type="text" name="tt[1]" class="number zautableinput" id="zaut5" onkeyup="zaugetadd('t')">
+            </td>
+            <td>
+                <input type="text" name="tt[2]" class="number zautableinput" id="zaut6" onkeyup="zaugetadd('t')">
+            </td>
+            <td>
+                <input type="text" name="tt[3]" class="number zautableinput" id="zaut7" onkeyup="zaugetadd('t')">
+            </td>
+            <td>
+                <input type="text" name="tt[4]" class="number zautableinput" id="zaut8" onkeyup="zaugetadd('t')">
+            </td>
+            <td>
+                <input type="text" name="tt[5]" class="number zautableinput" id="zaut9" onkeyup="zaugetadd('t')">
+            </td>
+        </tr>
+        <tr>
+            <td height="25">公用经费</td>
+            <td>
+                <input type="text" name="uu[0]" class="number zautableinput" id="zauu4" onkeyup="zaugetadd('u')">
+            </td>
+            <td>
+                <input type="text" name="uu[1]" class="number zautableinput" id="zauu5" onkeyup="zaugetadd('u')">
+            </td>
+            <td>
+                <input type="text" name="uu[2]" class="number zautableinput" id="zauu6" onkeyup="zaugetadd('u')">
+            </td>
+            <td>
+                <input type="text" name="uu[3]" class="number zautableinput" id="zauu7" onkeyup="zaugetadd('u')">
+            </td>
+            <td>
+                <input type="text" name="uu[4]" class="number zautableinput" id="zauu8" onkeyup="zaugetadd('u')">
+            </td>
+            <td>
+                <input type="text" name="uu[5]" class="number zautableinput" id="zauu9" onkeyup="zaugetadd('u')">
+            </td>
+        </tr>
+        <tr>
+            <td>中央转移支付</td>
+            <td height="25">公用经费</td>
+            <td>
+                <input type="text" name="vv[0]" class="number zautableinput"id="zauv4" onkeyup="zaugetadd('v')">
+            </td>
+            <td>
+                <input type="text" name="vv[1]" class="number zautableinput"id="zauv5" onkeyup="zaugetadd('v')">
+            </td>
+            <td>
+                <input type="text" name="vv[2]" class="number zautableinput"id="zauv6" onkeyup="zaugetadd('v')">
+            </td>
+            <td>
+                <input type="text" name="vv[3]" class="number zautableinput"id="zauv7" onkeyup="zaugetadd('v')">
+            </td>
+            <td>
+                <input type="text" name="vv[4]" class="number zautableinput"id="zauv8" onkeyup="zaugetadd('v')">
+            </td>
+            <td>
+                <input type="text" name="vv[5]" class="number zautableinput"id="zauv9" onkeyup="zaugetadd('v')">
+            </td>
+        </tr>
+        <tr>
+            <td height="25" colspan="2" align="center" valign="middle">其它资金合计</td>
+            <td height="25">&nbsp;</td>
+            <td>
+                <input type="text" name="ww[0]" class="number zautableinput" id="zauw4" onkeyup="zaugetadd('w')">
+            </td>
+            <td>
+                <input type="text" name="ww[1]" class="number zautableinput" id="zauw5" onkeyup="zaugetadd('w')">
+            </td>
+            <td>
+                <input type="text" name="ww[2]" class="number zautableinput" id="zauw6" onkeyup="zaugetadd('w')">
+            </td>
+            <td>
+                <input type="text" name="ww[3]" class="number zautableinput" id="zauw7" onkeyup="zaugetadd('w')">
+            </td>
+            <td>
+                <input type="text" name="ww[4]" class="number zautableinput" id="zauw8" onkeyup="zaugetadd('w')">
+            </td>
+            <td>
+                <input type="text" name="ww[5]" class="number zautableinput" id="zauw9" onkeyup="zaugetadd('w')">
+            </td>
+        </tr>
+    </table>
+    
+    <div class="formBar">
+        <ul style="float:left;margin-left:960px;">
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+            <li><div class="button"><div class="buttonContent"><button type="button" class="close">关闭</button></div></div></li>
+        </ul>
+    </div>
+    </form>
+</div>

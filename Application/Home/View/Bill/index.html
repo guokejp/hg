@@ -1,0 +1,66 @@
+<include file="Public:pageForm" />
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add" target="dialog" rel="Billadd" width="640" height="480"><span>新建报销单</span></a></li>
+<!-- 			<li><a class="delete" href="__URL__/delete/id/{item_id}/navTabId/Unitindex" target="ajaxTodo" title="确定要删除吗?"><span>删除单位</span></a></li> -->
+			<li><a class="edit" href="__URL__/edit/id/{item_id}" target="dialog" rel="Billedit" width="550" height="420"><span>修改报销单</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="77">
+		<thead>
+			<tr>
+				<th width="60">ID</th>
+				<th width="180">报销单号</th>
+				<th width="80">费用类型</th>
+				<th >项目名称</th>
+				<th width="80">录入人</th>
+				<th width="80">申请人</th>
+				<th width="100">申请金额</th>
+				<th width="80">审核状态</th>
+				<th width="80">审核人</th>
+				<th width="100">核批金额</th>
+				<th width="80">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.orderid}></td>
+				<td><{$vo.type|showbilltype}></td>
+				<td>
+					<switch name="vo.type">
+						<case value="0"><{$vo.categoryname}></case>
+						<case value="1"><{$vo.conferencename}></case>
+						<case value="2"><{$vo.trainname}></case>
+						<case value="3"><{$vo.specialname}></case>
+						<case value="4"><{$vo.oncebudgetname}></case>
+						<case value="5"><{$vo.contractname}></case>
+					</switch>
+				</td>
+				<td><{$vo.instaffname}></td>
+				<td><{$vo.staffname}></td>
+				<td><{$vo.money}></td>
+				<td>
+					<if condition="$vo.status eq 0"><span style="color:grey;"><b>等待审核</b></span>
+					<elseif condition="$vo.status eq 1"/><span style="color:green;"><b>审核通过</b></span>
+					<else /><span style="color:red;"><b>审核拒绝</b></span>
+					</if>
+				</td>
+				<td><{$vo.chestaffname}></td>
+				<td><neq name="vo.status" value="0"><{$vo.confirm}></neq></td>
+				<td>
+				<eq name="vo.status" value="0">
+					<!-- <a href="__URL__/edit/id/<{$vo.id}>" target="dialog" rel="Billadd" width="640" height="480"><span><b>[修改]</b></span></a> -->
+					<a href="__URL__/delete/id/<{$vo.id}>/navTabId/Billindex" target="ajaxTodo" title="确定要删除吗?"><span><b>[删除]</b></span></a>
+				<else/>
+				<a href="__URL__/view/id/<{$vo.id}>" target="dialog" rel="Billview" width="640" height="480"><span><b>[查看详情]</b></span></a>
+				</eq>
+				</td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

@@ -1,0 +1,73 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/Incomeindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<input type="hidden" name="termid" value="<{:session(C('TERM_ID'))}>" />
+		<input type="hidden" name="sectionid" value="<{:session(C('ADMIN_AUTH_SECTIONID'))}>" />
+		<input type="hidden" name="staffid" value="<{:session(C('ADMIN_AUTH_ID'))}>" />
+		<input type="hidden" name="unitid" value="<{:session(C(ADMIN_AUTH_UNITID))}>">
+		
+		<input type="hidden" name="once" value="<{$data.once}>">
+		<dl>
+			<dt>预算单号：</dt>
+			<dd>
+				<input type="text"  name="orderid" value="<{$orderid}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+
+		<if condition='$data.have_child eq 0'>
+			<dl>
+				<dt>费用类型：</dt>
+				<dd>
+					<input type="hidden" name="categoryid" value="<{$data.child.id}>">
+					<input type="text" value="<{$data.child.name}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+		<elseif condition="$data.have_child eq 1"/>
+			<dl>
+				<dt>费用类型：</dt>
+				<dd>
+					<select class="combox required" name="categoryid">
+						<option value="">所有项目</option>
+						<foreach name="data['child']" item="vo">
+							<option value="<{$vo.id}>"><{$vo.name}></option>
+						</foreach>
+					</select>
+				</dd>
+			</dl>
+		</if>
+		<dl>
+			<dt>部门：</dt>
+			<dd>
+				<input type="text" value="<{:session(C('ADMIN_AUTH_SECTIONNAME'))}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请人：</dt>
+			<dd>
+				<input type="text" value="<{:session(C('ADMIN_AUTH_NAME'))}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>预算金额：</dt>
+			<dd>
+				<input type="text" name="money" class="required number" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请事由：</dt>
+			<dd>
+				<textarea name="remark" class="required" style="width:100%;"></textarea>
+			</dd>
+		</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

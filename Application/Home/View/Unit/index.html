@@ -1,0 +1,27 @@
+<include file="Public:pageForm" />
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add" target="dialog" rel="Unitadd"><span>添加单位</span></a></li>
+			<li><a class="delete" href="__URL__/delete/id/{item_id}/navTabId/Unitindex" target="ajaxTodo" title="确定要删除吗?"><span>删除单位</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{item_id}" target="dialog" rel="Unitedit"><span>修改单位名称</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="77">
+		<thead>
+			<tr>
+				<th width="80">ID</th>
+				<th>单位名称</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.name}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

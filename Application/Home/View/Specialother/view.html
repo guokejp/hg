@@ -1,0 +1,68 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/Billindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<input type="hidden" name="id" value="<{$data.id}>" />
+		<dl>
+			<dt>项目名称：</dt>
+			<dd>
+				<input type="text"  value="<{$data.name}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请年份</dt>
+			<dd><input type="text"  value="<{$data.year}>" readonly="readonly" class="required" /></dd>
+		</dl>
+		<dl>
+			<dt>申请金额：</dt>
+			<dd><input type="text"  value="<{$data.money}>" readonly="readonly" class="required" /></dd>
+		</dl>
+		<dl>
+			<dt>申请单位：</dt>
+			<dd><input type="text"  value="<{$data.unitname}>" readonly="readonly" class="required" /></dd>
+		</dl>
+		<dl>
+			<dt>申请部门：</dt>
+			<dd>
+				<input type="text" value="<{$data.sectionname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>经办人：</dt>
+			<dd>
+				<input type="text" value="<{$data.staffname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl style="height:36px;">
+			<dt>申请事由：</dt>
+			<dd>
+				<textarea class="required" readonly="readonly" style="width:100%;"><{$data.remark}></textarea>
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>申请状态：</dt>
+			<dd>
+				<eq name="data.confirm" value="0"><span style="color:red;"><b>等待审核</b></span><else/><span style="color:green;"><b>审核通过</b></span></eq>
+			</dd>
+		</dl>
+		<eq name="data.confirm" value="1">
+		<dl>
+			<dt>审核金额：</dt>
+			<dd>
+				<input type="text" readonly="readonly" class="required number" value="<{$data.confirmmoney}>" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>审批意见：</dt>
+			<dd>
+				<textarea class="required" readonly="readonly" style="width:100%;"><{$data.cremark}></textarea>
+			</dd>
+		</dl>
+		</eq>
+		</div>
+		<div class="formBar">
+			<ul>
+			</ul>
+		</div>
+	</form>
+</div>

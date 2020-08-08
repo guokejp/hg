@@ -1,0 +1,62 @@
+<?php if (!defined('THINK_PATH')) exit();?><div class="pageContent">
+	<form method="post" action="/hg/index.php?s=/Home/Train/insert/navTabId/Trainindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+			<input type="hidden" name="termid" value="<?php echo session(C('TERM_ID'));?>">
+			<input type="hidden" name="unitid" value="<?php echo session(C('ADMIN_AUTH_UNITID'));?>">
+			<dl>
+				<dt>培训年度</dt>
+				<dd><input class="required"  type="text" value="<?php echo session(C('TERM_NAME'));?>" readonly="readonly" /></dd>
+			</dl>
+			<dl>
+				<dt>培训班名称</dt>
+				<dd><input autocomplete="off" name="name" class="required" style="width:100%" type="text" /></dd>
+			</dl>
+			<dl style="height:100px">
+				<dt>培训内容</dt>
+				<dd><textarea name="remark"  class="required" style="width:384px;height:100px" ></textarea></dd>
+			</dl>
+			<dl>
+				<dt>期数</dt>
+				<dd><input autocomplete="off" name="staging" class="required digits" min="1" type="text" /></dd>
+			</dl>
+			<dl>
+				<dt>人数</dt>
+				<dd><input autocomplete="off" name="number" class="required digits" type="text" /></dd>
+			</dl>
+			<dl>
+				<dt>地点</dt>
+				<dd><input autocomplete="off" name="place" class="required" style="width:100%" type="text" /></dd>
+			</dl>
+			<dl>
+				<dt>培训天数（单位：天）</dt>
+				<dd><input autocomplete="off" name="duration" class="required number" type="text" /></dd>
+			</dl>
+			<dl>
+				<dt>所需经费（单位：元）</dt>
+				<dd><input autocomplete="off" name="money" class="required number" type="text" /></dd>
+			</dl>
+			<dl>
+				<dt>经费来源</dt>
+				<dd><input autocomplete="off" name="origin" class="required" type="text"/></dd>
+			</dl>
+			<dl>
+				<dt>培训部门</dt>
+				<dd>
+				<select name="sectionid" class="combox required">
+					<option value="">请选择部门</option>
+					<?php if(is_array($sectionlist)): foreach($sectionlist as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; ?>
+				</select></dd>
+			</dl>
+
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

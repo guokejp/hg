@@ -1,0 +1,103 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/Billindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<input type="hidden" name="id" value="<{$data.id}>" />
+		<dl>
+			<dt>报销单号：</dt>
+			<dd>
+				<input type="text"  value="<{$data.orderid}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>费用类型</dt>
+			<dd><input type="text"  value="<{$data.type|showbilltype}>" readonly="readonly" class="required" /></dd>
+		</dl>
+		<dl>
+			<dt>合同名称：</dt>
+			<dd>
+				<input type="text"  value="<{$data.contractname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>具体形式名称：</dt>
+			<dd>
+				<input type="text"  value="<{$data.contract_money_name}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+
+		<eq name="data.contractmoneyqishuid" value="6">
+			<dl>
+				<dt>期数：</dt>
+				<dd>
+					<input type="text"  value="质保金" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+		<else/>
+			<dl>
+				<dt>期数：</dt>
+				<dd>
+					<input type="text"  value="<{$data.contractmoneyqishuid}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+		</eq>
+
+		<dl>
+			<dt>部门：</dt>
+			<dd>
+				<input type="text" value="<{$data.sectionname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请人：</dt>
+			<dd>
+				<input type="text" value="<{$data.staffname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<eq name="data.once" value="0">
+		<dl>
+			<dt>申请事项</dt>
+			<dd>
+				<input type="text"  style="width:100%" readonly="readonly" class="required" value="<{$data.name}>">
+			</dd>
+		</dl>
+		</eq>
+		<dl>
+			<dt>预算金额：</dt>
+			<dd>
+				<input type="text" readonly="readonly" class="required number" value="<{$data.money}>" />
+			</dd>
+		</dl>
+		<dl style="height:36px;">
+			<dt>申请事由：</dt>
+			<dd>
+				<textarea class="required" readonly="readonly" style="width:100%;"><{$data.remark}></textarea>
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>申请状态：</dt>
+			<dd>
+				<eq name="data.status" value="0"><span style="color:red;"><b>等待审核</b></span><else/><span style="color:green;"><b>审核通过</b></span></eq>
+			</dd>
+		</dl>
+		<eq name="data.status" value="1">
+		<dl>
+			<dt>预算金额：</dt>
+			<dd>
+				<input type="text" readonly="readonly" class="required number" value="<{$data.confirm}>" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>审批意见：</dt>
+			<dd>
+				<textarea class="required" readonly="readonly" style="width:100%;"><{$data.cremark}></textarea>
+			</dd>
+		</dl>
+		</eq>
+		</div>
+		<div class="formBar">
+			<ul>
+			</ul>
+		</div>
+	</form>
+</div>

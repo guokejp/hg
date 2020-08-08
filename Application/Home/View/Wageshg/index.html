@@ -1,0 +1,133 @@
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__ACTION__" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+				<td>
+					<p>
+						<label>工资月份：</label>
+						<select name="year" class="required">
+							<volist name="year" id="year">
+								<option value="<{$year.year}>" <eq name="year.year" value="$Think.post.year">selected='selected'</eq>><{$year.year}></option>
+							</volist>
+						</select>
+						
+					</p>
+				</td>
+				<td>
+					<P>
+						姓名:
+						<input type="text" name="name" class="textInput readonly" value="<{$Think.post.name}>">
+					</P>
+				</td>
+				<td>
+					<p>
+					<label>部门：</label>
+					<select name="section" class="required">
+					<option value="">所有部门</option>
+						<volist name="sectionlist" id="section">
+							<option value="<{$section.section}>" <eq name="section.section" value="$Think.post.section">selected='selected'</eq>><{$section.section}></option>
+						</volist>
+					</select>
+					
+					</p>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+			</table>
+		</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li class=""><a class="edit" href="<{:U('Wageshg/insert')}>" target="dwzImport" targettype="navTab" title="实要导出这些记录吗?"><span>导入工资</span></a></li>
+			<li class="line">line</li>
+			<li><a class="add" href="<{:U('Wageshg/make',array('navTabId'=>'Wageshgindex'))}>" target="ajaxTodo" title="确定要生成本月工资吗?"><span>生成本月工资</span></a></li>
+			<li class="line">line</li>
+			<li class="line">line</li>
+			<li><a class="add" href="<{:U('Wageshg/add')}>"  width="900" height="550" target="dialog"><span>添加工资</span></a></li>
+			<li><a class="edit" href="<{:U('Wageshg/edit',array('id'=>'{itemid}'))}>"  width="900" height="520" target="dialog"><span>修改工资</span></a></li>
+			<li><a class="delete"  href="__URL__/delete/id/{itemid}/navTabId/Wageshgindex" target="ajaxTodo" title="确定删除这项工资吗?"><span>删除工资</span></a></li>
+			<li class="line">line</li>
+			<li class="line">line</li>
+			<li class=""><a class="delete" href="<{:U('Wageshg/expUser')}>" target="dwzExport" targettype="navTab" title="实要导出这些记录吗?"><span>导出本月工资单</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+		</ul>
+	</div>
+	
+	<table class="table" width="250%" layoutH="82">
+		<thead>
+			<tr align="center">
+				<th style="width:2%;text-align:center">ID</th>
+				<th style="width:3%;text-align:center">序号</th>
+				<th style="width:3%;text-align:center">部门</th>
+				<th style="width:3%;text-align:center">姓名</th>
+				<th style="width:5%;text-align:center">卡号</th>
+				<th style="width:3%;text-align:center">职务工资</th>
+				<th style="width:3%;text-align:center">级别工资</th>
+				<th style="width:3%;text-align:center">工作性补贴</th>							
+				<th style="width:3%;text-align:center">生活补贴</th>
+				<th style="width:3%;text-align:center">海关津贴</th>	
+				<th style="width:3%;text-align:center">审计人员补贴</th>
+				<th style="width:3%;text-align:center">机要保密津贴</th>
+				<th style="width:3%;text-align:center">生活、电话补贴</th>							
+				<th style="width:3%;text-align:center">移动通信补贴</th>
+				<th style="width:3%;text-align:center">公务电话费</th>
+				<th style="width:3%;text-align:center">独生子女费</th>
+				<th style="width:3%;text-align:center">应发合计</th>
+				<th style="width:3%;text-align:center">所得税扣除医疗保险</th>							
+				<th style="width:3%;text-align:center">所得税扣除公积金</th>
+				<th style="width:3%;text-align:center">所得税扣除独生子女费</th>
+				<th style="width:3%;text-align:center">所得税扣除移动电话座机费</th>
+				<th style="width:3%;text-align:center">所得税扣除其他扣款</th>	
+				<th style="width:3%;text-align:center">应缴税所得额</th>	
+				<th style="width:3%;text-align:center">个人所得税</th>	
+				<th style="width:3%;text-align:center">房租</th>
+				<th style="width:3%;text-align:center">应扣合计</th>
+				<th style="width:3%;text-align:center">实发数</th>	
+				<th style="width:5%;text-align:center">时间</th>					
+			</tr>
+		</thead>
+		<tbody>
+			<volist name='list' id='list'>
+				<tr target="itemid" rel="<{$list.id}>" align="center">
+					<td style="widtd:2%;text-align:center"><{$list.id}></td>
+					<td style="widtd:3%;text-align:center"><{$list.num}></td>
+					<td style="widtd:3%;text-align:center"><{$list.section}></td>
+					<td style="widtd:3%;text-align:center"><{$list.name}></td>
+					<td style="widtd:5%;text-align:center"><{$list.card}></td>
+					<td style="widtd:3%;text-align:center"><{$list.job_wages}></td>
+					<td style="widtd:3%;text-align:center"><{$list.level_wages}></td>
+					<td style="widtd:3%;text-align:center"><{$list.job_subsidies}></td>							
+					<td style="widtd:3%;text-align:center"><{$list.life_subsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.haiguan_subsidies}></td>	
+					<td style="widtd:3%;text-align:center"><{$list.audit_subsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.secret_subsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.lifephone_subsidies}></td>	
+					<td style="widtd:3%;text-align:center"><{$list.phone_subsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.officialphone}></td>
+					<td style="widtd:3%;text-align:center"><{$list.onechild}></td>
+					<td style="widtd:3%;text-align:center"><{$list.giveadd}></td>							
+					<td style="widtd:3%;text-align:center"><{$list.de_medicalinsurance}></td>
+					<td style="widtd:3%;text-align:center"><{$list.de_gongjijing}></td>
+					<td style="widtd:3%;text-align:center"><{$list.de_onechild}></td>
+					<td style="widtd:3%;text-align:center"><{$list.de_phone}></td>	
+					<td style="widtd:3%;text-align:center"><{$list.de_other}></td>	
+					<td style="widtd:3%;text-align:center"><{$list.de_taxadd}></td>	
+					<td style="widtd:3%;text-align:center"><{$list.individualtax}></td>
+					<td style="widtd:3%;text-align:center"><{$list.rent}></td>
+					<td style="widtd:3%;text-align:center"><{$list.deduct_add}></td>
+					<td style="widtd:3%;text-align:center"><{$list.wages}></td>
+					<td style="widtd:5%;text-align:center"><{$list.year}></td>						
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<!--<include file="Public:panelBar" />-->
+</div>

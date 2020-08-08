@@ -1,0 +1,13 @@
+包干预算删除问题
+
+专项修改时间问题
+专项预算删除问题
+
+报销单号问题
+
+
+
+
+alter table hg_staff add `lock` TINYINT(1) DEFAULT 0 NOT null;
+alter table hg_special add `bx_ord` varchar(5);
+alter table hg_category add `bx_ord` varchar(5);

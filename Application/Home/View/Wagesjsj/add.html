@@ -1,0 +1,116 @@
+<div class="pageContent">
+	<form method="post" action="<{:U('Wagesjsj/addinsert',array('navTabId'=>'Wagesjsjindex','callbackType'=>'closeCurrent'))}>" class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<div class="pageFormContent" layoutH="60">
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">序号：</dt>
+				<dd><input type="text" class="required digits" minlength="7" maxlength="7" style="width:100%" name="num"/>
+				</dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">部门：</dt>
+				<dd>
+					<input type="text" class="required" style="width:100%" name="section" value="缉私局" readonly="readonly"/>
+				</dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">姓名：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="name"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">卡号：</dt>
+				<dd><input type="text" class="required digits"  style="width:100%" name="card"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">职务工资：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="job_wages"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">级别工资：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="level_wages"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">实习工资：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="internship_wages"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">工作性补贴：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="job_subsidies"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">生活性补贴：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="haiguan_subsidies"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">移动通信补贴：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="phone_subsidies"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">公务电话费：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="officialphone"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">警衔补贴：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="bit_subsidies"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">独生子女费：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="onechild"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">应发合计：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="giveadd"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">应扣医疗保险：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="de_medicalinsurance" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">应扣公积金：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="de_gongjijing"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">扣税基数：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="de_base"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">应扣所得税：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="individualtax" /></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">房租：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="rent"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">扣发工作性津贴：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="de_jobsubsidies"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">应扣合计：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="deduct_add"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">实发工资：</dt>
+				<dd><input type="text" class="required number"  style="width:100%" name="wages"/></dd>
+			</dl>
+			<dl style="width: 420px;">
+				<dt style="width: 140px;">年月份：</dt>
+				<dd>
+					<input type="text" class="required number" minlength="6" maxlength="6" style="width:100%" name="year"/>
+					<span class="info">如2014年1月请输入:201401</span>
+				</dd>
+			</dl>
+
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+
+

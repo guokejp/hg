@@ -1,0 +1,77 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/adminedit_che/navTabId/Billaudit/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<input type="hidden" name="id" value="<{$data.id}>">
+		<input type="hidden" name="oldconfirm" value="<{$data.confirm}>">
+		<dl>
+			<dt>报销单号：</dt>
+			<dd>
+				<input type="text"  value="<{$data.orderid}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>费用类型</dt>
+			<dd><input type="text"  value="<{$data.type|showbilltype}>" readonly="readonly" class="required" /></dd>
+		</dl>
+		<dl>
+			<dt>项目名称：</dt>
+			<dd>
+				<input type="text"  value="<switch name="data.type">
+						<case value="0"><{$data.categoryname}></case>
+						<case value="1"><{$data.conferencename}></case>
+						<case value="2"><{$data.trainname}></case>
+						<case value="3"><{$data.specialname}></case>
+						<case value="4"><{$data.oncebudgetname}></case>
+					</switch>
+				" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>部门：</dt>
+			<dd>
+				<input type="text" value="<{$data.sectionname}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请人：</dt>
+			<dd>
+				<input type="text" value="<{:session(C('ADMIN_AUTH_NAME'))}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>报销金额：</dt>
+			<dd>
+				<input type="text" autocomplete="off" readonly="readonly" value="<{$data.money}>" class="required number" />
+			</dd>
+		</dl>
+		<dl style="height:36px;">
+			<dt>申请事由：</dt>
+			<dd>
+				<textarea readonly="readonly" class="required" style="width:100%;"><{$data.remark}></textarea>
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>核批金额：</dt>
+			<dd>
+				<input type="text" name="confirm" class="required number" value="<{$data.confirm}>" max="<{$data.confirm}>"/>
+			</dd>
+		</dl>
+		<dl>
+			<dt>核批意见：</dt>
+			<dd>
+				<textarea class="required" name="cremark" style="width:100%;"><{$data.cremark}></textarea>
+			</dd>
+		</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

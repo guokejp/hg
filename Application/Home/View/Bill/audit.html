@@ -1,0 +1,203 @@
+<script type="text/javascript">
+	$(function(){
+		var aucatset="<?php echo isset($_POST['cat_catid'])?>";
+		if (aucatset=='1') {
+			$('#type_cat').show();
+			$('#type_cat').find('select').attr('name','cat_catid');
+		}else{
+			$('#type_cat').hide();
+			$('#type_cat').find('select').removeAttr('name');
+		}
+		var auspeset="<?php echo isset($_POST['spe_proid'])?>";
+		if (auspeset=='1') {
+			$('#type_spe').show();
+			$('#type_spe').find('select').attr('name','spe_proid');
+		}else{
+			$('#type_spe').hide();
+			$('#type_spe').find('select').removeAttr('name');
+		}
+
+		$('#auchty').change(function(){
+			var type=$('#auchty').find('option:selected').val();
+			if (type=='0') {
+				$('#type_cat').show();
+				$('#type_cat').find('select').attr('name','cat_catid');
+				
+				$('#type_spe').hide();
+				$('#type_spe').find('select').removeAttr('name');
+			}else if(type=='3'){
+				$('#type_spe').show();
+				$('#type_spe').find('select').attr('name','spe_proid');
+				var year=$('#billauterm').find('option:selected').html();
+				$.ajax({
+					url:"__URL__/ajax_getspecial",
+					type:'post',
+					data:{year:year},
+					datatype:'json',
+					success:function(data){
+						if (data) {
+							$('#type_spe').find('option').remove();
+							$('#type_spe').find('select').append("<option value=''>所有专项</option>");
+							for (var i = 0; i < data.length; i++) {
+								$('#type_spe').find('select').append("<option value="+data[i]["id"]+">"+data[i]["html"]+data[i]["name"]+"</option>");
+							}
+						}
+					},
+					error:function(data){
+						alert('错误');
+					},
+				});
+				$('#type_cat').hide();
+				$('#type_cat').find('select').removeAttr('name');
+			}else{
+				$('#type_cat').hide();
+				$('#type_cat').find('select').removeAttr('name');
+
+				$('#type_spe').hide();
+				$('#type_spe').find('select').removeAttr('name');
+			}
+		})
+	})
+</script>
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					单号:<input type="text" name="orderid" value="<{$Think.post.orderid}>"/>
+				</td>
+				<td>部门：</td>
+				<td>
+					<select class="combox" name="sectionid">
+						<option value="">所有部门</option>
+						<foreach name="sectionlist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.sectionid"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>财务账期：</td>
+				<td>
+					<select class="combox" name="termid" id="billauterm">
+						<foreach name="termlist" item="vo">
+							<option value="<{$vo.id}>" <empty name="Think.post.termid"><eq name="vo.id" value="$Think.session.c143a55a53523bd3d3b85d5ab0bd92c4"> selected="selected" </eq><else/><eq name="vo.id" value="$Think.post.termid"> selected="selected" </eq></empty>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>费用类型：</td>
+				<td>
+					<select class="combox" name="type" id="auchty">
+						<option value="">请选择</option>
+						<option value="0" <eq name='Think.post.type' value='0'>selected='true'</eq> >包干</option>
+						<option value="1" <eq name='Think.post.type' value='1'>selected='true'</eq> >会议</option>
+						<option value="2" <eq name='Think.post.type' value='2'>selected='true'</eq> >培训</option>
+						<option value="3" <eq name='Think.post.type' value='3'>selected='true'</eq> >专项</option>
+						<option value="4" <eq name='Think.post.type' value='4'>selected='true'</eq> >一次性包干</option>
+						<option value="5" <eq name='Think.post.type' value='5'>selected='true'</eq> >采购</option>
+					</select>
+				</td>
+				<td id="type_cat" style="display: none">
+					<select>
+						<option value="">所有包干</option>
+						<foreach name="catlist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.cat_catid"> selected="selected" </eq>><{$vo.html}><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td id="type_spe" style="display: none">
+					<select>
+						<option value="">所有专项</option>
+						<foreach name="spelist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.spe_proid"> selected="selected" </eq>><{$vo.html}><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>状态：</td>
+				<td>
+					<select class="combox" name="statu">
+						<option value="">请选择</option>
+						<option value="0" <eq name='Think.post.status' value='0'>selected='true'</eq> >等待审批</option>
+						<option value="1" <eq name='Think.post.status' value='1'>selected='true'</eq> >审批通过</option>
+						<option value="2" <eq name='Think.post.status' value='2'>selected='true'</eq> >审批拒绝</option>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a title="确实要通过这些申请?" class="add" href="__URL__/allcheck/navTabId/Billaudit" target="selectedTodo" rel="billallcheck[]"><span>批量审批</span></a></li>
+			<eq name='Think.session.a33b0950bd33a719b997e7c07a28ccb4' value='1'>
+				<li><a class="edit" href="__URL__/adminedit/id/{item_id}" target="dialog" rel="Billadminedit" width="550" height="420"><span>修改报销单</span></a></li>
+			</eq>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="87">
+		<thead>
+			<tr>
+				<th width="22"><input type="checkbox" group="billallcheck[]" class="checkboxCtrl"></th>
+				<th width="30">ID</th>
+				<th width="180">报销单号</th>
+				<th width="80">费用类型</th>
+				<th width="100">部门</th>
+				<th >项目名称</th>
+				<th width="80">录入人</th>
+				<th width="80">申请人</th>
+				<th width="100">申请金额</th>
+				<th width="80">审核状态</th>
+				<th width="80">核批金额</th>
+				<th width="80">审核人</th>
+				<th width="80">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><input name="billallcheck[]" value="<{$vo.id}>" type="checkbox"></td>
+				<td><{$vo.id}></td>
+				<td><{$vo.orderid}></td>
+				<td><{$vo.type|showbilltype}></td>
+				<td><{$vo.sectionname}></td>
+				<td>
+					<switch name="vo.type">
+						<case value="0"><{$vo.categoryname}></case>
+						<case value="1"><{$vo.conferencename}></case>
+						<case value="2"><{$vo.trainname}></case>
+						<case value="3"><{$vo.specialname}></case>
+						<case value="4"><{$vo.oncebudgetname}></case>
+						<case value="5"><{$vo.contractname}></case>
+					</switch>
+				</td>
+				<td><{$vo.instaffname}></td>
+				<td><{$vo.staffname}></td>
+				<td><{$vo.money}></td>
+				<td>
+					<if condition="$vo.status eq 0"><span style="color:grey;"><b>等待审核</b></span>
+					<elseif condition="$vo.status eq 1"/><span style="color:green;"><b>审核通过</b></span>
+					<else /><span style="color:red;"><b>审核拒绝</b></span>
+					</if>
+				</td>
+				<td>
+					<neq name="vo.status" value="0"><{$vo.confirm}></neq>
+				</td>
+				<td><{$vo.chestaffname}></td>
+				<td>
+					<a href="__URL__/view/id/<{$vo.id}>" target="dialog" rel="Billview" width="640" height="480"><span><b>[详情]</b></span></a>
+					<eq name="vo.status" value="0">
+					<a href="__URL__/check/id/<{$vo.id}>" target="dialog" rel="Billcheck" width="640" height="480"><span><b>[审核]</b></span></a>
+					</eq>
+				</td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

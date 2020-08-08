@@ -1,0 +1,57 @@
+<script style="text/javascript">
+	$(function(){
+		$('.tabsPageContent').mousemove(function(){
+			$('.lib').find('b').parents('.plib').find('a:eq(0)').trigger("click");
+		});
+	});
+</script>
+<include file="Public:pageForm" />
+<div>
+	<div layoutH="0" style="float:left; display:block; overflow:auto; width:20%; border:solid 1px #CCC; line-height:21px;">
+	    <ul class="tree treeFolder collapse">
+	    	<foreach name='categorylist' item="vo">
+				<li class="plib"><a <eq name="vo['child']" value=''>href="__ACTION__/categoryid/<{$vo.id}>/once/<{$vo.once}>" target="navtab" rel="Catbudgetindex"</eq> ><{$vo.name}></a>
+					<neq name="vo['child']" value=''>
+						<ul>
+							<foreach name="vo['child']" item="vo">
+								<li class="lib"><a href="__ACTION__/categoryid/<{$vo.id}>/once/<{$vo.once}>" target="navtab" rel="Catbudgetindex"><eq name="vo.id" value="$Think.get.categoryid"><b><{$vo.name}></b><else/><{$vo.name}></eq></a></li>
+							</foreach>
+						</ul>
+					</neq>
+				</li>
+			</foreach>
+	     </ul>
+	</div>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<empty name="Think.get.categoryid"><else/>
+			<!-- <li><a class="edit" href="__URL__/edit/id/{item_id}" target="dialog" rel="Catbudgetedit"><span>调整预算</span></a></li> -->
+			</empty>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="77">
+		<thead>
+			<tr>
+				<th width="100">部门名称</th>
+				<th>预算名称</th>
+				<th width="100">预算金额</th>
+				<th width="100">报销状态</th>
+				<th width="100">核批金额</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.sectionname}></td>
+				<td><{$vo.name}></td>
+				<td><{$vo.money}></td>
+				<td><{$vo.status|showconferencestatus}></td>
+				<td><{$vo.confirm}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

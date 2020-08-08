@@ -1,0 +1,40 @@
+
+<div>
+	<div layoutH="0" style="float:left; display:block; overflow:auto; width:20%; border:solid 1px #CCC; line-height:21px;">
+	    <ul class="tree treeFolder">
+			<li><a href="#">成都海关</a>
+				<ul>
+					<foreach name="unitlist" item="vo">
+						<li><a href="__ACTION__/unitid/<{$vo.id}>"  target="navtab" rel="Sectionindex"><eq name="vo.id" value="$Think.get.unitid"><b><{$vo.name}></b><else/><{$vo.name}></eq></a></li>
+					</foreach>
+				</ul>
+			</li>
+	     </ul>
+	</div>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<empty name="Think.get.unitid"><else/>
+			<li><a class="add" href="__URL__/add/unitid/<{$Think.get.unitid}>" target="dialog" rel="Sectionadd"><span>添加部门</span></a></li>
+			<li><a class="delete" href="__URL__/delete/id/{item_id}/navTabId/Sectionindex" target="ajaxTodo" title="确定要删除吗?"><span>删除部门</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{item_id}" target="dialog" rel="Sectionedit"><span>修改部门名称</span></a></li>
+			</empty>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="77">
+		<thead>
+			<tr>
+				<th>部门名称</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.name}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+</div>

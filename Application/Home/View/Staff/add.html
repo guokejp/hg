@@ -1,0 +1,61 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/Staffindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+			<dl>
+				<dt>部门：</dt>
+				<dd>
+				<select name="sectionid" class="required combox">
+					<foreach name="sectionlist" item="vo">
+						<option value="<{$vo.id}>"><{$vo.name}></option>
+					</foreach>
+				</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>角色</dt>
+				<dd>
+				<select name="roleid" class="required combox">
+					<foreach name="rolelist" item="vo">
+						<option value="<{$vo.id}>"><{$vo.name}></option>
+					</foreach>
+				</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>姓名：</dt>
+				<dd><input autocomplete="off" name="name" class="required" style="width:100%" type="text" /></dd>
+			</dl>
+			<dl>
+				<dt>工号：</dt>
+				<dd><input autocomplete="off" name="number" class="required digits" style="width:100%" type="text"/></dd>
+			</dl>
+			<dl>
+				<dt>密码：</dt>
+				<dd><input name="password" class="required" style="width:100%" type="password" value="123456" /></dd>
+			</dl>
+			<dl>
+				<dt>确认密码：</dt>
+				<dd><input name="confirm" class="required" style="width:100%" type="password" value="123456" /></dd>
+			</dl>
+			<dl>
+				<dt>等级：</dt>
+				<dd>
+					<select name="level" class="required combox">
+						<option selected="selected" value="1">处以下</option>
+						<option value="2">处级以上</option>
+				</select>
+				</dd>
+			</dl>
+
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,183 @@
+<script type="text/javascript">
+	var $no=3
+	function addTr(id){
+		$no++;
+		$str='				<tr>'+
+				'	<td ><input name="type['+$no+']" class="required" value="'+id+'" type="hidden"><input name="name['+$no+']" class="required addname" autocomplete="off" style="width:160px" type="text"></td>'+
+				'	<td ><input name="first['+$no+']" class="number required" style="width:80px" type="text"></td>'+
+				'	<td ><input name="second['+$no+']" class="number" style="width:80px" type="text"></td>'+
+				'	<td ><input name="third['+$no+']" class="number" style="width:80px" type="text"></td>'+
+				'	<td ><input name="fourth['+$no+']" class="number" style="width:80px" type="text"></td>'+
+				'	<td ><input name="fifth['+$no+']" class="number" style="width:80px" type="text"></td>'+
+				'	<td ><input name="warranty['+$no+']" class="number" style="width:80px" type="text"></td>'+
+				'	<td ><a title="删除本行" onclick="delTr(this)" class="btnDel">删除</a></td>'+
+				'</tr>';
+		$($str).appendTo($("#tbody"+id)).initUI();
+
+
+	}
+
+	function delTr(obj){
+		$(obj).parents("tr").remove();
+		return false;
+	}
+</script>
+<style type="text/css">
+	/* CSS Table */
+	table.list1 {border-collapse:collapse; border:solid 1px #ededed;}
+	table.list1 thead tr {background:url("__PUBLIC__/themes/default/images/grid/tableth.png") repeat-x scroll 0 0 #F0EFF0;}
+	table.list1 th {padding:1px 2px; line-height:21px; border-right: solid 1px #D0D0D0; border-bottom:solid 1px #D0D0D0; font-weight:bolder; }
+	table.list1 td {padding:1px 2px; line-height:21px; border-right:solid 1px #ededed;}
+	table.list1 th.asc, .grid .gridHeader th.asc{background-position: 100% 0; background:url(../default/images/order_up.gif) no-repeat right; cursor:pointer;}
+	table.list1 th.desc, .grid .gridHeader th.desc{background-position: 100% 0; background:url(../default/images/order_down.gif) no-repeat right; cursor:pointer;}
+	table.list1 tbody {background-color:#fff;}
+	table.list1 .right {text-align:right;}
+	table.list1 .trbg {background-color:#F8F8F8;}
+	table.list1 .hot {background-color:#fff5c0;}
+	table.list1 .hover {background-color:#e4f5ff;}
+	/* table.list1 .selected {background-color:#7cc5e5;border-color:#b8d0d6; } */
+	table.list1 a {color:#3C7FB1; font-size:11px; line-height:20px;}
+	table.list1 a:hover {text-decoration:underline; line-height:20px;}
+	table.list1 td span.error {z-index:-1}
+	table.nowrap tbody tr {border-bottom:solid 1px #ededed;}
+</style>
+<div class="pageContent">
+	<form method="post" action="__URL__/execsave/navTabId/Contractindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<input type="hidden" name="contractid" value="<{$data.id}>">
+		<input type="hidden" name="projectmoney" value="<{$data.projectmoney}>">
+		<input type="hidden" name="goodsmoney" value="<{$data.goodsmoney}>">
+		<input type="hidden" name="servicemoney" value="<{$data.servicemoney}>">
+		<div class="pageFormContent" layoutH="56">
+			<dl class="nowrap">
+				<dt>专项名称:</dt>
+				<dd><input class="required" style="width:100%" type="text" value="<{$data.specialname}>" readonly="readonly" /></dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>项目名称:</dt>
+				<dd><input class="required" style="width:100%" type="text" value="<{$data.name}>" readonly="readonly" /></dd>
+			</dl>
+			<dl class="nowrap" >
+				<dt>采购方式：</dt>
+				<dd>
+					<input type="text" value="<{$data.procurement|showprocurementtype}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>部门：</dt>
+				<dd>
+					<input type="text" value="<{$data.sectionname}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>申请人：</dt>
+				<dd>
+					<input type="text" value="<{$data.staffname}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+			<div id="tablecontent">
+			<eq name="data.project" value="1">
+			<fieldset>
+				<legend><span style="color:green">工程</span><span style="color:red">【预算总金额：<{$data.projectmoney}>】</span></legend>
+				<table class="list1">
+					<thead>
+						<tr>
+							<th style="width:180px"><span style="color:green">工程名称</span></th>
+							<th style="width:100px">第一期</th>
+							<th style="width:100px">第二期</th>
+							<th style="width:100px">第三期</th>
+							<th style="width:100px">第四期</th>
+							<th style="width:100px">第五期</th>
+							<th style="width:100px">质保金</th>
+							<th style="width:80px;background:#ffffff;border:none;"><a class="button" href="javascript:;" onclick="addTr(1)"><span>添加更多</span></a></th>
+						</tr>
+					</thead>
+					<tbody id="tbody1">
+						<tr>
+							<td ><input name="type[1]" class="required" value="1" type="hidden"><input name="name[1]" autocomplete="off" class="required" style="width:160px" type="text"></td>
+							<td ><input name="first[1]" class="number required" style="width:80px" type="text"></td>
+							<td ><input name="second[1]" class="number" style="width:80px" type="text"></td>
+							<td ><input name="third[1]" class="number" style="width:80px" type="text"></td>
+							<td ><input name="fourth[1]" class="number" style="width:80px" type="text"></td>
+							<td ><input name="fifth[1]" class="number" style="width:80px" type="text"></td>
+							<td ><input name="warranty[1]" class="number" style="width:80px" type="text"></td>
+							<td ></td>
+						</tr>
+					</tbody>
+				</table>
+			</fieldset>
+			</eq>
+			<eq name="data.goods" value="1">
+			<fieldset>
+				<legend><span style="color:green">货物</span><span style="color:red">【预算总金额：<{$data.goodsmoney}>】</span></legend>
+				<table class="list1">
+					<thead>
+						<tr>
+							<th style="width:180px"><span style="color:green">货物名称</span></th>
+							<th style="width:100px">第一期</th>
+							<th style="width:100px">第二期</th>
+							<th style="width:100px">第三期</th>
+							<th style="width:100px">第四期</th>
+							<th style="width:100px">第五期</th>
+							<th style="width:100px">质保金</th>
+							<th style="width:80px;background:#ffffff;border:none;"><a class="button" href="javascript:;" onclick="addTr(2)"><span>添加更多</span></a></th>
+						</tr>
+					</thead>
+					<tbody id="tbody2">
+					<tr>
+						<td ><input name="type[2]" class="required" value="2" type="hidden"><input name="name[2]" autocomplete="off" class="required" style="width:160px" type="text"></td>
+						<td ><input name="first[2]" class="number required" style="width:80px" type="text"></td>
+						<td ><input name="second[2]" class="number" style="width:80px" type="text"></td>
+						<td ><input name="third[2]" class="number" style="width:80px" type="text"></td>
+						<td ><input name="fourth[2]" class="number" style="width:80px" type="text"></td>
+						<td ><input name="fifth[2]" class="number" style="width:80px" type="text"></td>
+						<td ><input name="warranty[2]" class="number" style="width:80px" type="text"></td>
+						<td ></td>
+					</tr>
+					</tbody>
+				</table>
+			</fieldset>
+			</eq>
+			<eq name="data.service" value="1">
+			<fieldset>
+				<legend><span style="color:green">服务</span><span style="color:red">【预算总金额：<{$data.servicemoney}>】</span></legend>
+				<table class="list1">
+					<thead>
+						<tr>
+							<th style="width:180px"><span style="color:green">服务名称</span></th>
+							<th style="width:100px">第一期</th>
+							<th style="width:100px">第二期</th>
+							<th style="width:100px">第三期</th>
+							<th style="width:100px">第四期</th>
+							<th style="width:100px">第五期</th>
+							<th style="width:100px">质保金</th>
+							<th style="width:80px;background:#ffffff;border:none;"><a class="button" href="javascript:;" onclick="addTr(3)"><span>添加更多</span></a></th>
+						</tr>
+					</thead>
+					<tbody id="tbody3">
+					<tr>
+						<td ><input name="type[3]" class="required" value="3" type="hidden"><input name="name[3]" autocomplete="off" class="required" style="width:160px" type="text"></td>
+						<td ><input name="first[3]" class="number required" style="width:80px" type="text"></td>
+						<td ><input name="second[3]" class="number" style="width:80px" type="text"></td>
+						<td ><input name="third[3]" class="number" style="width:80px" type="text"></td>
+						<td ><input name="fourth[3]" class="number" style="width:80px" type="text"></td>
+						<td ><input name="fifth[3]" class="number" style="width:80px" type="text"></td>
+						<td ><input name="warranty[3]" class="number" style="width:80px" type="text"></td>
+						<td ></td>
+					</tr>
+					</tbody>
+				</table>
+			</fieldset>
+			</eq>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

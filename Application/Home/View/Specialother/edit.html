@@ -1,0 +1,47 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/Specialotherindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<input type="hidden" name="id" value="<{$data.id}>">
+		<input type="hidden" name="confirm" value="<{$data.confirm}>">
+		<dl>
+			<dt>采购名称：</dt>
+			<dd>
+				<input type="text" value="<{$data.name}>" name="name" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>部门：</dt>
+			<dd>
+				<input type="text" value="<{:session(C('ADMIN_AUTH_SECTIONNAME'))}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>经办人：</dt>
+			<dd>
+				<input type="text" value="<{:session(C('ADMIN_AUTH_NAME'))}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请金额：</dt>
+			<dd>
+				<input type="text" name="money" value="<{$data.money}>" class="required number" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请事由：</dt>
+			<dd>
+				<textarea name="remark" class="required" style="width:100%;"><{$data.remark}></textarea>
+			</dd>
+		</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,67 @@
+<include file="Public:pageForm" />
+<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__ACTION__" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+</form>
+<div class="pageContent">
+	<table class="table" width="250%" layoutH="49">
+		<thead>
+			<tr align="center">
+				<th style="width:2%;text-align:center">ID</th>
+				<th style="width:3%;text-align:center">序号</th>
+				<th style="width:3%;text-align:center">部门</th>
+				<th style="width:3%;text-align:center">姓名</th>
+				<th style="width:5%;text-align:center">卡号</th>					
+				<th style="width:3%;text-align:center">职务工资</th>
+				<th style="width:3%;text-align:center">级别工资</th>	
+				<th style="width:3%;text-align:center">实习工资</th>
+				<th style="width:3%;text-align:center">工作性补贴</th>	
+				<th style="width:3%;text-align:center">生活性补贴</th>
+				<th style="width:3%;text-align:center">移动通信补贴</th>
+				<th style="width:3%;text-align:center">公务电话费</th>							
+				<th style="width:3%;text-align:center">警衔补贴</th>
+				<th style="width:3%;text-align:center">独生子女费</th>
+				<th style="width:3%;text-align:center">应发合计</th>
+				<th style="width:3%;text-align:center">应扣医疗保险</th>	
+				<th style="width:3%;text-align:center">应扣公积金</th>
+				<th style="width:3%;text-align:center">扣税基数</th>	
+				<th style="width:3%;text-align:center">应扣所得税</th>	
+				<th style="width:3%;text-align:center">税后扣除项目：房租（按月）</th>
+				<th style="width:3%;text-align:center">扣发工作性津贴</th>
+				<th style="width:3%;text-align:center">应扣合计</th>
+				<th style="width:3%;text-align:center">实发工资</th>	
+				<th style="width:5%;text-align:center">时间</th>					
+			</tr>
+		</thead>
+		<tbody>
+			<volist name='list' id='list'>
+				<tr target="itemid" rel="<{$list.id}>" align="center">
+					<td style="widtd:2%;text-align:center"><{$list.id}></td>
+					<td style="widtd:3%;text-align:center"><{$list.num}></td>
+					<td style="widtd:3%;text-align:center"><{$list.section}></td>
+					<td style="widtd:3%;text-align:center"><{$list.name}></td>
+					<td style="widtd:5%;text-align:center"><{$list.card}></td>
+					<td style="widtd:3%;text-align:center"><{$list.job_wages}></td>	
+					<td style="widtd:3%;text-align:center"><{$list.level_wages}></td>
+					<td style="widtd:3%;text-align:center"><{$list.internship_wages}></td>
+					<td style="widtd:3%;text-align:center"><{$list.job_subsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.life_subsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.phone_subsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.officialphone}></td>
+					<td style="widtd:3%;text-align:center"><{$list.bit_subsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.onechild}></td>
+					<td style="widtd:3%;text-align:center"><{$list.giveadd}></td>	
+					<td style="widtd:3%;text-align:center"><{$list.de_medicalinsurance}></td>
+					<td style="widtd:3%;text-align:center"><{$list.de_gongjijing}></td>
+					<td style="widtd:3%;text-align:center"><{$list.de_base}></td>
+					<td style="widtd:3%;text-align:center"><{$list.individualtax}></td>
+					<td style="widtd:3%;text-align:center"><{$list.rent}></td>
+					<td style="widtd:3%;text-align:center"><{$list.de_jobsubsidies}></td>
+					<td style="widtd:3%;text-align:center"><{$list.deduct_add}></td>
+					<td style="widtd:3%;text-align:center"><{$list.wages}></td>
+					<td style="widtd:5%;text-align:center"><{$list.year}></td>						
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

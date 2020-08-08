@@ -1,0 +1,15 @@
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option <eq name="numPerPage" value="10">selected="selected"</eq> value="10">10</option>
+				<option <eq name="numPerPage" value="20">selected="selected"</eq> value="20">20</option>
+				<option <eq name="numPerPage" value="50">selected="selected"</eq> value="50">50</option>
+				<option <eq name="numPerPage" value="100">selected="selected"</eq> value="100">100</option>
+			</select>
+			<span>条，共<{$totalCount}>条</span>
+		</div>
+		
+		<div class="pagination" targetType="navTab" totalCount="<{$totalCount}>" numPerPage="<{$numPerPage}>" pageNumShown="10" currentPage="<{$currentPage}>"></div>
+
+	</div>

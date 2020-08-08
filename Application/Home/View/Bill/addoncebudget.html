@@ -1,0 +1,61 @@
+<script type="text/javascript">
+	function addoncebudgetchange(){
+			$moneyljk1=$("#addoncebudget").find("option:selected").attr("money");
+			$("#addoncebudgetmoney").val($moneyljk1);
+			$("#addoncebudgetmoney1").attr("max",$moneyljk1);
+	}
+</script>
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/Billindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<input type="hidden" name="type" value="4">
+		<input type="hidden" name="termid" value="<{:session(C('TERM_ID'))}>">
+		<input type="hidden" name="unitid" value="<{:session(C('ADMIN_AUTH_UNITID'))}>">
+		<dl>
+			<dt>报销单号：</dt>
+			<dd>
+				<input type="text" name="orderid" value="<{$orderid}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>报销事项：</dt>
+			<dd>
+				<select name="projectid" id="addoncebudget" class="combox required" onchange="addoncebudgetchange()">
+					<option money="" value="">请选择报销事项</option>
+					<foreach name="oncebudgetlist" item="vo">
+						<option money="<{$vo.confirm}>" value="<{$vo.id}>"><{$vo.name}></option>
+					</foreach>
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt>预算金额：</dt>
+			<dd>
+				<input id="addoncebudgetmoney" type="text" value="" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<include file="Bill/add_chper" />
+		<dl>
+			<dt>报销金额：</dt>
+			<dd>
+				<input type="text" autocomplete="off" name="money" id="addoncebudgetmoney1" class="required number" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请事由：</dt>
+			<dd>
+				<textarea name="remark" class="required" style="width:100%;"></textarea>
+			</dd>
+		</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,152 @@
+<script type="text/javascript">
+	$(function(){
+		$('#categorychoose').change(function(){
+			var ccat=$('#categorychoose').find('option:selected').val();
+			$('#cateprojectid').val(ccat);
+			$.ajax({
+				url:"__URL__/get_c_lastmoney",
+				type:'post',
+				datatype:'json',
+				data:{ccat:ccat},
+				success:function(data){
+					$('#catallowmoney').val(data);
+					$('#catinputmoney').attr('max',data);
+					//console.log(data);
+				},
+				error:function(){
+					alertMsg.error('错误');
+				}
+			});
+		})
+		$('#is_cailv').change(function(){
+			if ($('#is_cailv').prop('checked')) {
+				$('#addcatbudbillcailv').show();
+
+				$('#add_cailv_place').attr('name','cailv_place');
+				$('#add_cailv_daymon').attr('name','cailv_daymon');
+				$('#add_cailv_type').attr('name','cailv_type');
+				$('#add_cailv_peop').attr('name','cailv_peop');
+
+			}else{
+				$('#addcatbudbillcailv').hide();
+
+				$('#add_cailv_place').removeAttr('name');
+				$('#add_cailv_daymon').removeAttr('name');
+				$('#add_cailv_type').removeAttr('name');
+				$('#add_cailv_peop').removeAttr('name');
+			}
+		})
+	});
+</script>
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/Billindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<input type="hidden" name="type" value="0">
+		<input type="hidden" name="termid" value="<{:session(C('TERM_ID'))}>">
+		<input type="hidden" name="unitid" value="<{:session(C('ADMIN_AUTH_UNITID'))}>">
+
+		<input type="hidden" name="projectid" value="<{$data.categoryid}>" id='cateprojectid' />
+		<dl>
+			<dt>报销单号：</dt>
+			<dd>
+				<input type="text" name="orderid" value="<{$orderid}>" readonly="readonly" class="required" />
+			</dd>
+		</dl>
+		<neq name='childcat' value=''>
+			<dl>
+				<dt>费用类型：</dt>
+				<dd>
+					<input type="text" value="<{$data.name}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>	
+		<else/>
+			<dl>
+				<dt>费用类型：</dt>
+				<dd>
+					<input type="text" value="<{$data.categoryname}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>	
+		</neq>
+		
+		<neq name='childcat' value=''>
+			<dl>
+				<dt> 选择项目：</dt>
+				<dd>
+					<select class="combox required" id="categorychoose">
+						<option value="">所有项目</option>
+						<foreach name="childcat" item="vo">
+							<option value="<{$vo.id}>"><{$vo.name}></option>
+						</foreach>
+					</select>
+				</dd>
+			</dl>
+		</neq>
+		<dl>
+			<dt>属于差旅费 ：</dt>
+			<dd>
+				<input type="checkbox" id="is_cailv" name="cailv" value="1" />
+			</dd>
+		</dl>
+
+		<div id="addcatbudbillcailv" style="display: none">
+			<dl>
+				<dt style="color: red">目的地：</dt>
+				<dd>
+					<input type="text"class="required" id='add_cailv_place'/>
+				</dd>
+			</dl>
+			<dl>
+				<dt style="color: red">出差天数：</dt>
+				<dd>
+					<input type="text" class="required number" id='add_cailv_daymon'/>
+				</dd>
+			</dl>
+			<dl>
+				<dt style="color: red">出差类型：</dt>
+				<dd>
+					<select class="combox required" id='add_cailv_type'>
+						<option value="1">会议</option>
+						<option value="2">培训</option>
+						<option value="3">其它</option>
+					</select>
+				</dd>
+			</dl>
+			<dl style="height: 35px;">
+				<dt style="color: red">出差人员：</dt>
+				<dd>
+					<textarea id="add_cailv_peop" class="required" style="width:100%;"></textarea>
+				</dd>
+			</dl>
+		</div>
+
+		<dl>
+			<dt>可用金额：</dt>
+			<dd>
+				<input type="text" value="<{$data.money}>" readonly="readonly" class="required" id='catallowmoney'/>
+			</dd>
+		</dl>
+		<include file="Bill/add_chper" />
+		<dl>
+			<dt>报销金额：</dt>
+			<dd>
+				<input type="text" autocomplete="off" name="money"  class="required number" max="<{$data.money}>" id='catinputmoney' />
+			</dd>
+		</dl>
+		<dl>
+			<dt>申请事由：</dt>
+			<dd>
+				<textarea name="remark" class="required" style="width:100%;"></textarea>
+			</dd>
+		</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

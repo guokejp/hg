@@ -1,0 +1,61 @@
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>部门：</td>
+				<td>
+					<select class="combox" name="sectionid">
+						<option value="">所有部门</option>
+						<foreach name="sectionlist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.sectionid"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="85">
+		<thead>
+			<tr>
+				<th width="80">报销单ID</th>
+				<th width="200">报销单备注</th>
+				<th width="100">核批金额</th>
+				<th width="100">地点</th>
+				<th width="100">天数</th>
+				<th width="100">类型</th>
+				<th width="200">人员</th>
+				<th width="100">时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.remark}></td>
+				<td><{$vo.confirm}></td>
+				<td><{$vo.place}></td>
+				<td><{$vo.day}></td>
+				<td>
+					<switch name="vo.type" >
+						<case value="1">会议</case>
+						<case value="2">培训</case>
+						<case value="3">其它</case>
+					</switch>
+				</td>
+				<td><{$vo.people}></td>
+				<td><{$vo.date}></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

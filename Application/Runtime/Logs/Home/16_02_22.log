@@ -1,0 +1,1075 @@
+[ 2016-02-22T11:16:33+08:00 ] 127.0.0.1 /hg/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+
+[ 2016-02-22T11:16:33+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005909s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006019s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000537s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2016-02-22T11:16:35+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `hg_unit` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `hg_role` [ RunTime:0.0076s ]
+SQL: SELECT Staff.id AS id,Staff.name AS name,Staff.number AS number,Staff.sectionid AS sectionid,Staff.password AS password,Staff.level AS level,Staff.roleid AS roleid,Staff.timestamp AS timestamp,Staff.locked AS locked,Section.name AS sectionname,Section.unitid AS unitid,Unit.name AS unitname,Role.name AS rolename FROM hg_staff Staff  JOIN hg_section Section ON Section.id=Staff.sectionid  JOIN hg_unit Unit ON Section.unitid=Unit.id  JOIN hg_role Role ON Staff.roleid=Role.id WHERE Staff.number = '1111111' LIMIT 1   [ RunTime:0.0249s ]
+
+[ 2016-02-22T11:16:35+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `hg_placard` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `hg_placard` ORDER BY id desc LIMIT 10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079646s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079719s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000975s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001042s ]
+
+[ 2016-02-22T11:16:35+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000604s ]
+
+[ 2016-02-22T11:16:38+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Bill/index&_=1456110998002
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0270s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `hg_conference` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `hg_oncebudget` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `hg_train` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0309s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0054s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.sectionid = '1' AND Bill.termid = '3' LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT Bill.id AS id,Bill.type AS type,Bill.projectid AS projectid,Bill.orderid AS orderid,Bill.instaid AS instaid,Bill.sectionid AS sectionid,Bill.staffid AS staffid,Bill.money AS money,Bill.remark AS remark,Bill.timestamp AS timestamp,Bill.termid AS termid,Bill.status AS status,Bill.chestaid AS chestaid,Bill.unitid AS unitid,Bill.confirm AS confirm,Bill.cremark AS cremark,Category.name AS categoryname,Conference.name AS conferencename,Oncebudget.name AS oncebudgetname,Special.name AS specialname,Train.name AS trainname,Contract.name AS contractname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname,Instaff.name AS instaffname,Chestaff.name AS chestaffname FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.sectionid = '1' AND Bill.termid = '3' ORDER BY Bill.id desc LIMIT 0,50   [ RunTime:0.0116s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010794s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000913s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000971s ]
+
+[ 2016-02-22T11:16:40+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Bill/audit&_=1456111000127
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0208s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `hg_section` WHERE `unitid` = 1 AND `selock` = 0 ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `hg_term` ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `hg_category`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `hg_special` WHERE `year` = 2015  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: statu D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 455 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 456 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 457 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Home\Controller\BillController.class.php 第 459 行.
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `hg_conference` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `hg_oncebudget` [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `hg_train` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0134s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = '1' AND Bill.termid = '3' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT Bill.id AS id,Bill.type AS type,Bill.projectid AS projectid,Bill.orderid AS orderid,Bill.instaid AS instaid,Bill.sectionid AS sectionid,Bill.staffid AS staffid,Bill.money AS money,Bill.remark AS remark,Bill.timestamp AS timestamp,Bill.termid AS termid,Bill.status AS status,Bill.chestaid AS chestaid,Bill.unitid AS unitid,Bill.confirm AS confirm,Bill.cremark AS cremark,Category.name AS categoryname,Conference.name AS conferencename,Oncebudget.name AS oncebudgetname,Special.name AS specialname,Train.name AS trainname,Contract.name AS contractname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname,Instaff.name AS instaffname,Chestaff.name AS chestaffname FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.unitid = '1' AND Bill.termid = '3' ORDER BY Bill.id desc LIMIT 0,50   [ RunTime:0.0128s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+NOTIC: [8] Undefined index: orderid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 77 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 96 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 97 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 98 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 99 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 100 行.
+NOTIC: [8] Undefined index: type D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 101 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: cat_catid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 107 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: spe_proid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 113 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 120 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 121 行.
+NOTIC: [8] Undefined index: status D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\64caec888fc6d84dd47f77fbe4d17475.php 第 122 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049839s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049886s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000727s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000807s ]
+
+[ 2016-02-22T11:16:42+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Bill/check/id/180&_=1456111002453
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0096s ]
+SQL: SELECT `type` FROM `hg_bill` WHERE `id` = 180 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `hg_category` WHERE ( pid=0 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_conference` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `hg_oncebudget` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `hg_train` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0127s ]
+SQL: SELECT Bill.id AS id,Bill.type AS type,Bill.projectid AS projectid,Bill.orderid AS orderid,Bill.instaid AS instaid,Bill.sectionid AS sectionid,Bill.staffid AS staffid,Bill.money AS money,Bill.remark AS remark,Bill.timestamp AS timestamp,Bill.termid AS termid,Bill.status AS status,Bill.chestaid AS chestaid,Bill.unitid AS unitid,Bill.confirm AS confirm,Bill.cremark AS cremark,Category.name AS categoryname,Conference.name AS conferencename,Oncebudget.name AS oncebudgetname,Special.name AS specialname,Train.name AS trainname,Contract.name AS contractname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname,Instaff.name AS instaffname,Chestaff.name AS chestaffname FROM hg_bill Bill LEFT JOIN hg_category Category ON Category.id=Bill.projectid LEFT JOIN hg_conference Conference ON Conference.id=Bill.projectid LEFT JOIN hg_oncebudget Oncebudget ON Oncebudget.id=Bill.projectid LEFT JOIN hg_special Special ON Special.id=Bill.projectid LEFT JOIN hg_train Train ON Train.id=Bill.projectid LEFT JOIN hg_contract Contract ON Contract.id=Bill.projectid LEFT JOIN hg_term Term ON Term.id=Bill.termid  JOIN hg_section Section ON Section.id=Bill.sectionid  JOIN hg_staff Staff ON Staff.id=Bill.staffid LEFT JOIN hg_staff Instaff ON Instaff.id=Bill.instaid LEFT JOIN hg_staff Chestaff ON Chestaff.id=Bill.chestaid WHERE Bill.id = '180' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `hg_bill_cailv` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `hg_bill_cailv` WHERE ( billid=180 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Undefined index: is_cailv D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\8cb18b60ee18f52dbb7118a65ffdd92a.php 第 99 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009566s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2016-02-22T11:16:47+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Spebudget/index&_=1456111006753
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0373s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `hg_section` WHERE `unitid` = 1 AND `selock` = 0 ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `hg_special` WHERE `pid` = 0 AND `year` = 2015  [ RunTime:0.0004s ]
+SQL: SELECT DISTINCT  `year` FROM `hg_special` WHERE ( pid=0 ) ORDER BY year desc  [ RunTime:0.0178s ]
+SQL: SHOW COLUMNS FROM `hg_spebudget` [ RunTime:0.0079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_spebudget Spebudget  JOIN hg_section Section ON Section.id=Spebudget.sectionid  JOIN hg_special Special ON Special.id=Spebudget.specialid WHERE Spebudget.unitid = '1' AND Special.year = '2015' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT Spebudget.id AS id,Spebudget.specialid AS specialid,Spebudget.firstallmoney AS firstallmoney,Spebudget.money AS money,Spebudget.sectionid AS sectionid,Spebudget.unitid AS unitid,Spebudget.timestamp AS timestamp,Spebudget.total AS total,Section.name AS sectionname,Special.year AS year,Special.gov AS gov,Special.name AS specialname FROM hg_spebudget Spebudget  JOIN hg_section Section ON Section.id=Spebudget.sectionid  JOIN hg_special Special ON Special.id=Spebudget.specialid WHERE Spebudget.unitid = '1' AND Special.year = '2015' ORDER BY Spebudget.id asc LIMIT 0,50   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0056s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 50 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0219s ]
+SQL: SHOW COLUMNS FROM `hg_contract` [ RunTime:0.0065s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 75 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 50 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 75 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 50 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 76 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 50 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 76 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 50 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 77 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 50 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 77 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 51 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 78 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 51 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 78 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 51 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 79 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 51 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 79 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 51 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 80 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 51 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 80 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 53 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 81 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = 12 AND `type` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 53 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 81 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = 12 AND `type` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 53 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 82 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 53 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 82 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 53 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 83 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 53 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 83 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 54 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 84 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 54 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 84 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 54 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 85 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 54 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 85 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 54 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 86 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 54 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 86 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 55 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 87 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 55 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 87 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 55 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 88 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 55 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 88 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 55 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 89 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 55 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 89 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 57 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 90 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 57 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 90 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 57 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 91 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 57 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 91 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 57 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 92 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 57 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 92 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 58 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 93 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = 11 AND `type` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 58 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 93 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = 11 AND `type` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 58 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 94 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 58 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 94 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 58 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 95 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 58 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 95 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 59 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 96 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 59 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 96 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 59 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 97 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 59 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 97 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 59 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 98 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 59 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 98 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 60 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 99 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 60 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 99 AND `sectionid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 1 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 60 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 100 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 60 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 100 AND `sectionid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 2 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 60 AND `type` = 3 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 101 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` IN ('1','2') AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 60 AND `type` = 3 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `hg_contract` WHERE `specialid` = 101 AND `sectionid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `unitid` = 1 AND `sectionid` = 4 AND `status` = 0 AND `projectid` = null AND `type` = 5 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined index: name D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 92 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 97 行.
+NOTIC: [8] Undefined index: year D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 103 行.
+NOTIC: [8] Undefined index: pspe D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 110 行.
+NOTIC: [8] Undefined index: pspe D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 110 行.
+NOTIC: [8] Undefined index: pspe D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 110 行.
+NOTIC: [8] Undefined index: pspe D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 110 行.
+NOTIC: [8] Undefined index: pspe D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\6fc45d5584200b78cf8933579bdfa756.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030810s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030855s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000784s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2016-02-22T11:16:47+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Spebudget/get_c_spe
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000603s ]
+
+[ 2016-02-22T11:16:48+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Spebudget/spebud_look
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0150s ]
+SQL: SELECT `id` FROM `hg_special` WHERE `unitid` = 1 AND `year` = 2015 ORDER BY pid,id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_spebudget` [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0074s ]
+SQL: SELECT Spebudget.id AS id,Spebudget.specialid AS specialid,Spebudget.firstallmoney AS firstallmoney,Spebudget.money AS money,Spebudget.sectionid AS sectionid,Spebudget.unitid AS unitid,Spebudget.timestamp AS timestamp,Spebudget.total AS total,Section.name AS sectionname,Special.year AS year,Special.gov AS gov,Special.name AS specialname FROM hg_spebudget Spebudget  JOIN hg_section Section ON Section.id=Spebudget.sectionid  JOIN hg_special Special ON Special.id=Spebudget.specialid WHERE Spebudget.unitid = '1' AND Spebudget.specialid IN ('49','52','56','59','60','50','51','53','54','55','57','58') ORDER BY Spebudget.sectionid ASC,Spebudget.specialid ASC  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014112s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014179s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000473s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2016-02-22T11:17:00+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Catbudget/index&_=1456111020188
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0162s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `hg_category` ORDER BY id asc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 12 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: categoryid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 21 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 19 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 20 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 19 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 20 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 19 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 20 行.
+NOTIC: [8] Undefined variable: list D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 45 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 55 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 56 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 57 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 58 行.
+NOTIC: [8] Undefined variable: totalCount D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 60 行.
+NOTIC: [8] Undefined variable: totalCount D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 63 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 63 行.
+NOTIC: [8] Undefined variable: currentPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 63 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011618s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011664s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000331s ]
+
+[ 2016-02-22T11:17:02+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Catbudget/index/categoryid/92/once/1&_=1456111021969
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0374s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `hg_category` ORDER BY id asc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+SQL: SHOW COLUMNS FROM `hg_catbudget` [ RunTime:0.0184s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0067s ]
+SQL: SELECT Catbudget.id AS id,Catbudget.termid AS termid,Catbudget.unitid AS unitid,Catbudget.sectionid AS sectionid,Catbudget.staffid AS staffid,Catbudget.categoryid AS categoryid,Catbudget.money AS money,Catbudget.timestamp AS timestamp,Category.name AS categoryname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname FROM hg_catbudget Catbudget  JOIN hg_category Category ON Category.id=Catbudget.categoryid  JOIN hg_term Term ON Term.id=Catbudget.termid  JOIN hg_section Section ON Section.id=Catbudget.sectionid  JOIN hg_staff Staff ON Staff.id=Catbudget.staffid WHERE Catbudget.unitid = '1' AND Catbudget.categoryid = '92' AND Catbudget.termid = '3' ORDER BY Catbudget.id asc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 12 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 19 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 20 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 19 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 20 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 19 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 20 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 55 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 56 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 57 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 58 行.
+NOTIC: [8] Undefined variable: totalCount D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 60 行.
+NOTIC: [8] Undefined variable: totalCount D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 63 行.
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 63 行.
+NOTIC: [8] Undefined variable: currentPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\7a51a5f140df288b10071b3fd7d76d88.php 第 63 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012090s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000495s ]
+
+[ 2016-02-22T11:17:04+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Catbudget/report&_=1456111024379
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0176s ]
+SQL: SELECT * FROM `hg_section` WHERE `unitid` = 1 AND `selock` = 0 ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `hg_term` ORDER BY id desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `hg_category` WHERE `pid` = 0 AND `once` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_catbudget` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM hg_catbudget Catbudget  JOIN hg_category Category ON Category.id=Catbudget.categoryid  JOIN hg_term Term ON Term.id=Catbudget.termid  JOIN hg_section Section ON Section.id=Catbudget.sectionid  JOIN hg_staff Staff ON Staff.id=Catbudget.staffid WHERE Catbudget.unitid = '1' AND Catbudget.termid = '3' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT Catbudget.id AS id,Catbudget.termid AS termid,Catbudget.unitid AS unitid,Catbudget.sectionid AS sectionid,Catbudget.staffid AS staffid,Catbudget.categoryid AS categoryid,Catbudget.money AS money,Catbudget.timestamp AS timestamp,Category.name AS categoryname,Term.name AS termname,Section.name AS sectionname,Staff.name AS staffname FROM hg_catbudget Catbudget  JOIN hg_category Category ON Category.id=Catbudget.categoryid  JOIN hg_term Term ON Term.id=Catbudget.termid  JOIN hg_section Section ON Section.id=Catbudget.sectionid  JOIN hg_staff Staff ON Staff.id=Catbudget.staffid WHERE Catbudget.unitid = '1' AND Catbudget.termid = '3' ORDER BY Catbudget.id asc LIMIT 0,50   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `hg_catlog` [ RunTime:0.0299s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 78  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `hg_bill` [ RunTime:0.0071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 78 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 78 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 78  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 78 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 78 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 78  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 78 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 78 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 79  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 79 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 79 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 79  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 79 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 79 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 79  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 79 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 79 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 81  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 81 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 81 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 81  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 81 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 81 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 81  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 81 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 81 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 82  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 82 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 82 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 82  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 82 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 82 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 82  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 82 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 82 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 83  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 83 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 83 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 83  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 83 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 83 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 83  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 83 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 83 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 89  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 89 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 89 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 89  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 89 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 89 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 89  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 89 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 89 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 90  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 90 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 90 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 90  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 90 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 90 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 90  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 90 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 90 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 91  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 91 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 91 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 91  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 91 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 91 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 91  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 91 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 91 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 92  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 92 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 92 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 92  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 92 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 92 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 92  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 92 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 92 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 1 AND `categoryid` = 93  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 93 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 1 AND `projectid` = 93 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 2 AND `categoryid` = 93  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 93 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 2 AND `projectid` = 93 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 4 AND `categoryid` = 93  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 93 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 4 AND `projectid` = 93 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 7 AND `categoryid` = 78  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 7 AND `projectid` = 78 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 7 AND `projectid` = 78 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 7 AND `categoryid` = 92  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 7 AND `projectid` = 92 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 7 AND `projectid` = 92 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 10 AND `categoryid` = 92  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 10 AND `projectid` = 92 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 10 AND `projectid` = 92 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `hg_catlog` WHERE `unitid` = 1 AND `termid` = 3 AND `sectionid` = 10 AND `categoryid` = 94  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 10 AND `projectid` = 94 AND `type` = 0 AND `status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_bill` WHERE `termid` = 3 AND `unitid` = 1 AND `sectionid` = 10 AND `projectid` = 94 AND `type` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8] Undefined index: name D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 66 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: sectionid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 72 行.
+NOTIC: [8] Undefined index: pcat D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 79 行.
+NOTIC: [8] Undefined index: pcat D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 79 行.
+NOTIC: [8] Undefined index: pcat D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 79 行.
+NOTIC: [8] Undefined index: pcat D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 79 行.
+NOTIC: [8] Undefined index: pcat D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 79 行.
+NOTIC: [8] Undefined index: pcat D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 79 行.
+NOTIC: [8] Undefined index: DFHGFf3456DJ D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 91 行.
+NOTIC: [8] Undefined index: DFHGFf3456DJ D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\37002f60dc09e4262ded38560988cae7.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011835s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011879s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000762s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2016-02-22T11:17:04+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Catbudget/get_c_cat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-02-22T11:17:06+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Catbudget/catbud_look
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_category` [ RunTime:0.0112s ]
+SQL: SELECT `id`,`name` FROM `hg_category` WHERE `pid` = 0 AND `once` = 1 ORDER BY id  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 77 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 80 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 88 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 92 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 93 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 94 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `hg_category` WHERE `pid` = 0 AND `once` = 1 ORDER BY id  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 77 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 80 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 88 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 92 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 93 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_category` WHERE `pid` = 94 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `hg_catbudget` [ RunTime:0.0064s ]
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid IN ('92','93','94') ORDER BY Section.id ASC,Catbudget.categoryid ASC  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: list D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 207 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 207 行.
+NOTIC: [8] Undefined variable: val_cat D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 361 行.
+NOTIC: [8] Undefined variable: val_cat D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 361 行.
+NOTIC: [8] Undefined variable: val_cat D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 361 行.
+NOTIC: [8] Undefined variable: val_cat D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 361 行.
+NOTIC: [8] Undefined variable: val_cat D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 361 行.
+NOTIC: [8] Undefined variable: val_cat D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 361 行.
+SQL: SELECT `id`,`pid`,`name` FROM `hg_category` WHERE `once` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+NOTIC: [8] Undefined variable: tree D:\web\webroot\localhost\hg\Application\Home\Common\function.php 第 180 行.
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid = '78' ORDER BY Section.id ASC  [ RunTime:0.0007s ]
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid = '79' ORDER BY Section.id ASC  [ RunTime:0.0004s ]
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid = '81' ORDER BY Section.id ASC  [ RunTime:0.0004s ]
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid = '82' ORDER BY Section.id ASC  [ RunTime:0.0006s ]
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid = '83' ORDER BY Section.id ASC  [ RunTime:0.0009s ]
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid = '89' ORDER BY Section.id ASC  [ RunTime:0.0007s ]
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid = '90' ORDER BY Section.id ASC  [ RunTime:0.0007s ]
+SQL: SELECT Section.id AS sectionid,Section.name AS sectionname,Catbudget.categoryid AS categoryid,Catbudget.init_money AS init_money,Catbudget.money AS money,Category.name AS categoryname FROM hg_section Section LEFT JOIN hg_catbudget Catbudget ON Section.id=Catbudget.sectionid LEFT JOIN hg_category Category ON Category.id=Catbudget.categoryid WHERE Catbudget.termid = '3' AND Section.unitid = '1' AND Catbudget.categoryid = '91' ORDER BY Section.id ASC  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 379 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 379 行.
+NOTIC: [8] Undefined index: child D:\web\webroot\localhost\hg\Application\Home\Controller\CommonController.class.php 第 379 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+NOTIC: [8] Undefined index: sectionname D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\fba66e5f8a72f20e0b57e788f9b5edf9.php 第 46 行.
+NOTIC: [8] Undefined index: sectionname D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\fba66e5f8a72f20e0b57e788f9b5edf9.php 第 46 行.
+NOTIC: [8] Undefined index: sectionname D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\fba66e5f8a72f20e0b57e788f9b5edf9.php 第 46 行.
+NOTIC: [8] Undefined variable: c_spe_list D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\fba66e5f8a72f20e0b57e788f9b5edf9.php 第 49 行.
+NOTIC: [8] Undefined variable: c_spe_list D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\fba66e5f8a72f20e0b57e788f9b5edf9.php 第 58 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009907s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009942s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2016-02-22T11:18:02+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+
+[ 2016-02-22T11:18:02+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006491s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2016-02-22T11:18:04+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `hg_staff` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `hg_section` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `hg_unit` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `hg_role` [ RunTime:0.0065s ]
+SQL: SELECT Staff.id AS id,Staff.name AS name,Staff.number AS number,Staff.sectionid AS sectionid,Staff.password AS password,Staff.level AS level,Staff.roleid AS roleid,Staff.timestamp AS timestamp,Staff.locked AS locked,Section.name AS sectionname,Section.unitid AS unitid,Unit.name AS unitname,Role.name AS rolename FROM hg_staff Staff  JOIN hg_section Section ON Section.id=Staff.sectionid  JOIN hg_unit Unit ON Section.unitid=Unit.id  JOIN hg_role Role ON Staff.roleid=Role.id WHERE Staff.number = '1111111' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2016-02-22T11:18:04+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+SQL: SHOW COLUMNS FROM `hg_placard` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `hg_placard` ORDER BY id desc LIMIT 10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000188s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070425s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000740s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2016-02-22T11:18:04+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Index/timer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000497s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000546s ]
+
+[ 2016-02-22T11:18:06+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Role/index&_=1456111086278
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `hg_role` [ RunTime:0.0265s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_role` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: map D:\web\webroot\localhost\hg\Application\Home\Controller\RoleController.class.php 第 24 行.
+SQL: SELECT * FROM `hg_role` ORDER BY id asc LIMIT 0,50   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014941s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015174s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001207s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001283s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000881s ]
+
+[ 2016-02-22T11:18:08+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Special/index&_=1456111088011
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `hg_term` [ RunTime:0.0183s ]
+SQL: SELECT * FROM `hg_term` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `hg_special` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `hg_special` ORDER BY id asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+NOTIC: [8] Undefined variable: numPerPage D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\d421352dfdc946c93d83cd205baf0330.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015848s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015890s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2016-02-22T11:18:09+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Role/index&_=1456111089332
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `hg_role` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_role` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: map D:\web\webroot\localhost\hg\Application\Home\Controller\RoleController.class.php 第 24 行.
+SQL: SELECT * FROM `hg_role` ORDER BY id asc LIMIT 0,50   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007431s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000654s ]
+
+[ 2016-02-22T11:18:11+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Section/index&_=1456111091434
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+SQL: SHOW COLUMNS FROM `hg_unit` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `hg_unit` WHERE `unitlock` = 0 ORDER BY id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined index: unitid D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 7 行.
+NOTIC: [8] Undefined variable: list D:\web\webroot\localhost\hg\Application\Runtime\Cache\Home\9eac4652c34134f74422436a57800f9e.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023978s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000384s ]
+
+[ 2016-02-22T11:18:13+08:00 ] 127.0.0.1 /hg/index.php?s=/Home/Unit/index&_=1456111093679
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `hg_unit` [ RunTime:0.0391s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hg_unit` WHERE `unitlock` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `hg_unit` WHERE `unitlock` = 0 ORDER BY id asc LIMIT 0,50   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008696s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008786s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000630s ]
+

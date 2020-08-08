@@ -1,0 +1,50 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/allow/navTabId/Applybudaudit/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+			<input type="hidden" name="id" value="<{$data.id}>">
+			<dl>
+				<dt>项目：</dt>
+				<dd><input style="width:100%" type="text" size="30" value="<{$data.categoryname}>" readonly /></dd>
+			</dl>
+			<dl>
+				<dt>部门：</dt>
+				<dd><input style="width:100%" type="text" size="30" value="<{$data.sectionname}>" readonly /></dd>
+			</dl>
+			<dl>
+				<dt>当期余额：</dt>
+				<dd><input style="width:100%" class="number" type="text" size="30" value="<{$data.money}>" readonly /></dd>
+			</dl>
+			<table width="100%" class="list">
+				<thead>
+					<tr>
+						<th width="80">时间</th>
+						<th width="100">操作人</th>
+						<th>操作</th>
+						<th width="100">报销单号</th>
+						<th width="100">金额</th>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="list" item="vo">
+					<tr target="item_id" rel="<{$vo.id}>">
+						<td><{$vo.timestamp|date="Y-m-d",###}></td>
+						<td><{$vo.staffname}></td>
+						<td><{$vo.type|showcatlog}></td>
+						<td><{$vo.orderid}></td>
+						<td><{$vo.type|showcatlogtype}><{$vo.money}></td>
+					</tr>
+					</foreach>
+				</tbody>
+			</table>
+			<div class="divider">divider</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,60 @@
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return dialogSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<input type="hidden" name="spebudid" value="<{$spebudid}>">
+	<!-- <div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>采购报销：</td>
+				<td>
+					<select class="combox" name="type">
+						<option value="">请选择</option>
+						<option value="1" <eq name="Think.post.type" value="1"> selected="selected" </eq>>一般专项</option>
+						<option value="2" <eq name="Think.post.type" value="2"> selected="selected" </eq>>采购报销</option>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div> -->
+	</form>
+</div>
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="35">
+		<thead>
+			<tr>
+				<th width="30">ID</th>
+				<th width="120">报销单号</th>
+				<th width="80">报销部门</th>
+				<th width="80">报销人</th>
+				<th>内容摘要</th>
+				<th width="90">报销日期</th>
+				<th width="80">报销金额</th>
+				<th width="80">审核金额</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.orderid}></td>
+				<td><{$vo.sectionname}></td>
+				<td><{$vo.staffname}></td>
+				<td><{$vo.remark}></td>
+				<td><{:date("Y-m-d ", $vo['timestamp'])}></td>
+				<td><{$vo.money}></td>
+				<td>
+					<if condition="$vo['status'] eq 0"><a href="__MODULE__/Bill/check/id/<{$vo.id}>" target="dialog" rel="Billcheck" width="640" height="480"><span><b>[点击审核]</b></span></a>
+					<elseif condition="$vo['status'] eq 1"/><{$vo.confirm}>
+					<elseif condition="$vo['status'] eq 2"/>审核拒绝
+					</if>
+				</td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

@@ -1,0 +1,143 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/execsave/navTabId/Contractindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<input type="hidden" name="contractid" value="<{$data.id}>">
+		<input type="hidden" name="projectmoney" value="<{$data.projectmoney}>">
+		<input type="hidden" name="goodsmoney" value="<{$data.goodsmoney}>">
+		<input type="hidden" name="servicemoney" value="<{$data.servicemoney}>">
+		<div class="pageFormContent" layoutH="56">
+			<dl class="nowrap">
+				<dt>专项名称:</dt>
+				<dd><input class="required" style="width:100%" type="text" value="<{$data.specialname}>" readonly="readonly" /></dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>项目名称:</dt>
+				<dd><input class="required" style="width:100%" type="text" value="<{$data.name}>" readonly="readonly" /></dd>
+			</dl>
+			<dl class="nowrap" >
+				<dt>采购方式：</dt>
+				<dd>
+					<input type="text" value="<{$data.procurement|showprocurementtype}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>部门：</dt>
+				<dd>
+					<input type="text" value="<{$data.sectionname}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>申请人：</dt>
+				<dd>
+					<input type="text" value="<{$data.staffname}>" readonly="readonly" class="required" />
+				</dd>
+			</dl>
+			<div style="clear:both">
+			<eq name="data.project" value="1">
+			<fieldset>
+				<legend><span style="color:green">工程</span><span style="color:red">【预算总金额：<{$data.projectmoney}>】</span></legend>
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width:180px"><span style="color:green">工程名称</span></th>
+							<th style="width:100px">第一期</th>
+							<th style="width:100px">第二期</th>
+							<th style="width:100px">第三期</th>
+							<th style="width:100px">第四期</th>
+							<th style="width:100px">第五期</th>
+							<th style="width:100px">质保金</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="list" item="vo">
+							<eq name="vo.type" value="1">
+								<tr>
+									<td><{$vo.name}></td>
+									<td><{$vo.first}><eq name="vo.firststatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></td>
+									<td><neq name="vo.second" value="0"><{$vo.second}><eq name="vo.secondstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.third" value="0"><{$vo.third}><eq name="vo.thirdstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.fourth" value="0"><{$vo.fourth}><eq name="vo.fourthstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.fifth" value="0"><{$vo.fifth}><eq name="vo.fifthstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.warranty" value="0"><{$vo.warranty}><eq name="vo.warrantystatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+								</tr>
+							</eq>
+						</foreach>
+					</tbody>
+				</table>
+			</fieldset>
+			</eq>
+			<eq name="data.goods" value="1">
+			<fieldset>
+				<legend><span style="color:green">货物</span><span style="color:red">【预算总金额：<{$data.goodsmoney}>】</span></legend>
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width:180px"><span style="color:green">货物名称</span></th>
+							<th style="width:100px">第一期</th>
+							<th style="width:100px">第二期</th>
+							<th style="width:100px">第三期</th>
+							<th style="width:100px">第四期</th>
+							<th style="width:100px">第五期</th>
+							<th style="width:100px">质保金</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="list" item="vo">
+							<eq name="vo.type" value="2">
+								<tr>
+									<td><{$vo.name}></td>
+									<td><{$vo.first}><eq name="vo.firststatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></td>
+									<td><neq name="vo.second" value="0"><{$vo.second}><eq name="vo.secondstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.third" value="0"><{$vo.third}><eq name="vo.thirdstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.fourth" value="0"><{$vo.fourth}><eq name="vo.fourthstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.fifth" value="0"><{$vo.fifth}><eq name="vo.fifthstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.warranty" value="0"><{$vo.warranty}><eq name="vo.warrantystatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+								</tr>
+							</eq>
+						</foreach>
+					</tbody>
+				</table>
+			</fieldset>
+			</eq>
+			<eq name="data.service" value="1">
+			<fieldset>
+				<legend><span style="color:green">服务</span><span style="color:red">【预算总金额：<{$data.servicemoney}>】</span></legend>
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width:180px"><span style="color:green">服务名称</span></th>
+							<th style="width:100px">第一期</th>
+							<th style="width:100px">第二期</th>
+							<th style="width:100px">第三期</th>
+							<th style="width:100px">第四期</th>
+							<th style="width:100px">第五期</th>
+							<th style="width:100px">质保金</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="list" item="vo">
+							<eq name="vo.type" value="3">
+								<tr>
+									<td><{$vo.name}></td>
+									<td><{$vo.first}><eq name="vo.firststatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></td>
+									<td><neq name="vo.second" value="0"><{$vo.second}><eq name="vo.secondstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.third" value="0"><{$vo.third}><eq name="vo.thirdstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.fourth" value="0"><{$vo.fourth}><eq name="vo.fourthstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.fifth" value="0"><{$vo.fifth}><eq name="vo.fifthstatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+									<td><neq name="vo.warranty" value="0"><{$vo.warranty}><eq name="vo.warrantystatus" value="1"><span style="color:green;"><b>【付】</b></span></eq></neq></td>
+								</tr>
+							</eq>
+						</foreach>
+					</tbody>
+				</table>
+			</fieldset>
+			</eq>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

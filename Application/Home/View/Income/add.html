@@ -1,0 +1,16 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/Catbudgetindex/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+		<fieldset>
+			<legend>请选择预算类型</legend>
+			<foreach name="categorylist" item="vo">
+				<a href="__ACTION__/categoryid/<{$vo.id}>/" target="dialog" rel="Incomeadd"><span><b>[<{$vo.name}>]</b></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</foreach>
+		</fieldset>
+		</div>
+		<div class="formBar">
+			<ul>
+			</ul>
+		</div>
+	</form>
+</div>

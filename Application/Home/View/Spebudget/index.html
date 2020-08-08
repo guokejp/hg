@@ -1,0 +1,172 @@
+<script type="text/javascript">
+	$(function(){
+		$('#c_spe').find('option').remove();
+		$('#c_spe').find('select').append("<option value=''>请选择</option>");
+		var pcat=$('#p_spe').find('option:selected').val();
+		$.ajax({
+			url:"__URL__/get_c_spe",
+			type:'post',
+			data:{pid:pcat},
+			datatype:'json',
+			success:function(data){
+				if (data) {
+					$('#c_spe').show();
+					$('#c_spe').find('option').remove();
+					$('#c_spe').find('select').append("<option value=''>请选择</option>");
+					for (var i = 0; i < data.length; i++) {
+						$('#c_spe').find('select').append("<option value="+data[i]["id"]+">"+data[i]["name"]+"</option>");
+					}
+				}
+			},
+			error:function(data){
+				alert('错误');
+			},
+		});
+
+		$('#spebuyear').change(function(){
+			$('#p_spe').find('option').remove();
+			$('#p_spe').hide();
+			var year=$('#spebuyear').find('option:selected').val();
+			$.ajax({
+				url:"__URL__/get_p_spe",
+				type:'post',
+				data:{year:year},
+				datatype:'json',
+				success:function(data){
+					if (data) {
+						$('#p_spe').show();
+						$('#p_spe').find('option').remove();
+						$('#p_spe').append("<option value=''>请选择</option>");
+						for (var i = 0; i < data.length; i++) {
+							$('#p_spe').append("<option value="+data[i]["id"]+">"+data[i]["name"]+"</option>");
+						}
+					}
+				},
+				error:function(data){
+					alert('错误');
+				},
+			});
+		})
+
+		$('#p_spe').change(function(){
+			$('#c_spe').find('option').remove();
+			$('#c_spe').hide();
+			var pcat=$('#p_spe').find('option:selected').val();
+			$.ajax({
+				url:"__URL__/get_c_spe",
+				type:'post',
+				data:{pid:pcat},
+				datatype:'json',
+				success:function(data){
+					if (data) {
+						$('#c_spe').show();
+						$('#c_spe').find('option').remove();
+						$('#c_spe').find('select').append("<option value=''>请选择</option>");
+						for (var i = 0; i < data.length; i++) {
+							$('#c_spe').find('select').append("<option value="+data[i]["id"]+">"+data[i]["name"]+"</option>");
+						}
+					}
+				},
+				error:function(data){
+					alert('错误');
+				},
+			});
+		})
+	})
+</script>
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					专项名称:<input type="text" name="name" value="<{$Think.post.name}>"/>
+				</td>
+				<td>
+					<select class="combox" name="sectionid">
+						<option value="">所有部门</option>
+						<foreach name="sectionlist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.sectionid"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>年份：</td>
+				<td>
+					<select class="combox" name="year" id='spebuyear'>
+						<foreach name="pyear" item="vo">
+							<option value="<{$vo.year}>" <eq name="vo.year" value="$Think.post.year"> selected="selected" </eq>><{$vo.year}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>专项：</td>
+				<td>
+					<select class="" name="pspe" id='p_spe'>
+						<option value="">请选择</option>
+						<foreach name="pspe" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.pspe"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td id='c_spe'>
+					<select name="cspe">
+						<option value="">请选择</option>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add" target="dialog" rel="Specialadd" width='700' height='400'><span>添加预算</span></a></li>
+			<li><a class="delete" href="__URL__/delete/id/{item_id}/navTabId/Spebudgetindex" target="ajaxTodo" title="确定要删除吗?"><span>删除专项</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{item_id}" target="dialog" rel="Specialedit"><span>修改信息</span></a></li>
+			<li><a class="edit" href="__URL__/spelogdata/id/{item_id}" target="dialog" rel="Specialspelogdata" width='950' height='600'><span>查看详情</span></a></li>
+			<li><a class="add" href="__URL__/spebud_look" target="_blank"><span>查看专项单</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="114">
+		<thead>
+			<tr>
+				<th width="40">ID</th>
+				<th width="160">专项管理部门</th>
+				<th>专项名称</th>
+				<th width="100">专项核批年份</th>
+				<th width="80">政府预算</th>
+				<th width="80">初始定额</th>
+				<th width="100">预算金额</th>
+				<th width="100">剩余金额</th>
+				<th width="100">已审核报销单</th>
+				<th width="100">未审核报销单</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.sectionname}></td>
+				<td><{$vo.specialname}></td>
+				<td><{$vo.year}></td>
+				<td><{$vo.gov|showprocurement}></td>
+				<td><{$vo.firstallmoney}></td>
+				<td><{$vo.total}></td>
+				<td><{$vo.money}></td>
+				<td>
+					<a class="add" href="__URL__/getcheck/way/be_cvheck/id/<{$vo.id}>" target="dialog" rel="Spebudgetbe_cvheck" width="1000" height="550"><span style="color: blue"><{$vo.ched_amon}></span></a>
+				</td>
+				<td>
+					<a class="add" href="__URL__/getcheck/way/no_cvheck/id/<{$vo.id}>" target="dialog" rel="Spebudgetbe_cvheck" width="1000" height="550"><span style="color: red"><{$vo.noched_amon}></span></a>
+				</td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

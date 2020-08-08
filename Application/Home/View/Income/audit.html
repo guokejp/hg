@@ -1,0 +1,88 @@
+<include file="Public:pageForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" action="__ACTION__" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>费用类型：</td>
+				<td>
+					<select class="combox" name="categoryid">
+						<option value="">所有项目</option>
+						<foreach name="categorylist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.categoryid"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>部门：</td>
+				<td>
+					<select class="combox" name="sectionid">
+						<option value="">所有部门</option>
+						<foreach name="sectionlist" item="vo">
+							<option value="<{$vo.id}>" <eq name="vo.id" value="$Think.post.sectionid"> selected="selected" </eq>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>财务账期：</td>
+				<td>
+					<select class="combox" name="termid">
+						<foreach name="termlist" item="vo">
+							<option value="<{$vo.id}>" <empty name="Think.post.termid"><eq name="vo.id" value="$Think.session.c143a55a53523bd3d3b85d5ab0bd92c4"> selected="selected" </eq><else/><eq name="vo.id" value="$Think.post.termid"> selected="selected" </eq></empty>><{$vo.name}></option>
+						</foreach>
+					</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="87">
+		<thead>
+			<tr>
+				<th width="60">ID</th>
+				<th width="180">预算单号</th>
+				<th width="80">项目类型</th>
+				<th width="100">部门</th>
+				<th >项目名称</th>
+				<th width="80">申请人</th>
+				<th width="100">申请金额</th>
+				<th width="80">审核状态</th>
+				<th width="100">核批金额</th>
+				<th width="80">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.orderid}></td>
+				<td><{$vo.categoryname}></td>
+				<td><{$vo.sectionname}></td>
+				<td><{$vo.name}></td>
+				<td><{$vo.staffname}></td>
+				<td><{$vo.money}></td>
+				<td>
+					<if condition='$vo.status eq 0'><span style="color:grey;"><b>等待审核</b>
+					<elseif condition="$vo.status eq 1"/><span style="color:green;"><b>审核通过</b></span>
+					<elseif condition="$vo.status eq 2" /><span style="color:red;"><b>审核拒绝</b></span>
+					</if>
+				</td>
+				<td>
+					<neq name="vo.status" value="0"><{$vo.confirm}></neq>
+				</td>
+				<td>
+					<a href="__URL__/view/id/<{$vo.id}>" target="dialog" rel="Incomeview" width="640" height="480"><span><b>[详情]</b></span></a>
+					<eq name="vo.status" value="0">
+					<a href="__URL__/check/id/<{$vo.id}>" target="dialog" rel="Incomecheck" width="640" height="480"><span><b>[审核]</b></span></a>
+					</eq>
+				</td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

@@ -1,0 +1,79 @@
+
+<style type="text/css">
+    .tableinput{width:92%;height:100%;border-width: 0px;background-color:#F3F3FA; }
+    .changcolor{background-color:#E6E6F2;}
+</style>
+<div class="pageContent" layoutH="0" >
+    <form method="post" autocomplete="off" action="__URL__/usesave/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+    <h4 style="margin-left:300px;margin-bottom:0px;font-size:1.7em;letter-spacing:10px">事业单位收入支出情况修改（单位：万元）</h4>
+    <div style="width:1200px;margin-left:10px">
+        <input type="hidden" name="id" value="<{$data.id}>">
+        <div>
+            <div style="float:left">
+                <p>填报年份:</p>
+            </div>
+            <div style="float:left">
+                <b><{$data.year}></b>
+            </div>
+        </div>
+        <div>
+            <div style="float:left;margin-left:20px;">
+                <p>填报月份:</p>
+            </div>
+            <div style="float:left">
+                <b><{$data.month}></b>
+            </div>
+        </div>
+        <div style="margin-left:30px;float:left">
+            <div style="float:left">
+                <p>填报单位：</p>
+            </div>
+            <div style="float:left">
+                <b><{$data.sectionname}></b>
+            </div>
+        </div>
+    </div>
+    <table width="1100" border="1" style="border-collapse:collapse;margin-left:10px;clear:both">
+        <tr>
+            <td height="20" colspan="2" align="center" valign="middle">上年结余</td>
+            <td height="20" colspan="2" align="center" valign="middle">收入</td>
+            <td height="20" colspan="2" align="center" valign="middle">支出</td>
+        </tr>
+        <tr>
+          <td width="70" align="center" valign="middle">事业基金</td>
+            <td width="70" height="20" align="center" valign="middle">专用基金</td>
+            <td width="70" height="20" align="center" valign="middle">事业收入</td>
+            <td width="70" height="20" align="center" valign="middle">经营收入</td>
+            <td width="70" align="center" valign="middle">事业支出</td>
+            <td width="70" align="center" valign="middle">经营支出</td>
+        </tr>
+        <tr class="changcolor">
+            <td height="28">
+                <input type="text" name="aa[lastshiye]" class="number tableinput" value="<{$data.lastshiye}>">
+            </td>
+            <td>
+                <input type="text" name="aa[lastzhuanyong]" class="number tableinput" value="<{$data.lastzhuanyong}>">
+            </td>
+            <td>
+                <input type="text" name="aa[inshiye]" class="number tableinput" value="<{$data.inshiye}>">
+            </td >
+            <td>
+                <input type="text" name="aa[injingying]" class="number tableinput" value="<{$data.injingying}>">
+            </td>
+            <td>
+                <input type="text" name="aa[outshiye]" class="number tableinput" value="<{$data.outshiye}>">
+            </td>
+            <td>
+                <input type="text" name="aa[outjingying]" class="number tableinput" value="<{$data.outjingying}>">
+            </td>
+        </tr>
+    </table>
+    <div class="formBar">
+<ul style="float:left;margin-left:970px;">
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+            <li><div class="button"><div class="buttonContent"><button type="button" class="close">关闭</button></div></div></li>
+      </ul>
+    </div>
+    </form>
+</div>
+

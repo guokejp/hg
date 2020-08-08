@@ -1,0 +1,104 @@
+<include file="Public:pageForm" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__ACTION__" method="post">
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<p>
+						<label>工资月份：</label>
+						<select name="year" class="required">
+							<volist name="year" id="year">
+								<option value="<{$year.year}>" <eq name="year.year" value="$Think.post.year">selected='selected'</eq>><{$year.year}></option>
+							</volist>
+						</select>
+						
+					</p>
+				</td>
+				<td>
+					<P>
+						姓名:
+						<input type="text" name="name" class="textInput readonly" value="<{$Think.post.name}>">
+					</P>
+				</td>
+				<td>
+						<p>
+						<label>部门：</label>
+						<select name="section" class="required">
+						<option value="">所有部门</option>
+							<volist name="sectionlist" id="section">
+								<option value="<{$section.section}>" <eq name="section.section" value="$Think.post.section">selected='selected'</eq>><{$section.section}></option>
+							</volist>
+						</select>
+						
+						</p>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li class=""><a class="edit" href="__URL__/insert" target="dwzImport" targettype="navTab" title="实要导出这些记录吗?"><span>导入工资</span></a></li>
+			<li class="line">line</li>
+			<li><a class="add" href="__URL__/make/navTabId/Wagestxindex" target="ajaxTodo" title="确定要生成本月工资吗?"><span>生成本月工资</span></a></li>
+			<li class="line">line</li>
+			<li class="line">line</li>
+			<li><a class="add" href="<{:U('Wagestx/add')}>"  width="500" height="500" target="dialog"><span>添加工资</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{itemid}"  width="500" height="450" target="dialog"><span>修改工资</span></a></li>
+			<li><a class="delete"  href="__URL__/delete/id/{itemid}/navTabId/Wagestxindex" target="ajaxTodo" title="确定删除这项工资吗?"><span>删除工资</span></a></li>
+			<li class="line">line</li>
+			<li class="line">line</li>
+			<li class=""><a class="delete" href="__URL__/expUser" target="dwzExport" targettype="navTab" title="实要导出这些记录吗?"><span>导出本月工资单</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+		</ul>
+	</div>
+	
+	<table class="table" width="120%" layoutH="82">
+		<thead>
+			<tr align="center">
+				<th style="width:5%;text-align:center">ID</th>
+				<th style="width:8%;text-align:center">序号</th>
+				<th style="width:7%;text-align:center">部门</th>
+				<th style="width:7%;text-align:center">姓名</th>
+				<th style="width:8%;text-align:center">卡号</th>					
+				<th style="width:8%;text-align:center">离（退）休费</th>
+				<th style="width:8%;text-align:center">离（退）休人员补贴</th>	
+				<th style="width:8%;text-align:center">公务电话费</th>	
+				<th style="width:8%;text-align:center">政法干警补贴</th>
+				<th style="width:7%;text-align:center">护理费</th>	
+				<th style="width:7%;text-align:center">保留津贴</th>
+				<th style="width:7%;text-align:center">合计</th>	
+				<th style="width:8%;text-align:center">时间</th>					
+			</tr>
+		</thead>
+		<tbody>
+			<volist name='list' id='list'>
+				<tr target="itemid" rel="<{$list.id}>" align="center">
+					<td style="widtd:5%;text-align:center"><{$list.id}></td>
+					<td style="widtd:8%;text-align:center"><{$list.num}></td>
+					<td style="widtd:7%;text-align:center"><{$list.section}></td>
+					<td style="widtd:7%;text-align:center"><{$list.name}></td>
+					<td style="widtd:8%;text-align:center"><{$list.card}></td>
+					<td style="widtd:8%;text-align:center"><{$list.retire_wages}></td>	
+					<td style="widtd:8%;text-align:center"><{$list.retire_subsidies}></td>
+					<td style="widtd:8%;text-align:center"><{$list.officialphone}></td>
+					<td style="widtd:8%;text-align:center"><{$list.lawpolice_subsidies}></td>
+					<td style="widtd:7%;text-align:center"><{$list.nursing}></td>
+					<td style="widtd:7%;text-align:center"><{$list.keep_subsidies}></td>
+					<td style="widtd:7%;text-align:center"><{$list.wages}></td>
+					<td style="widtd:8%;text-align:center"><{$list.year}></td>						
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+<!--	<include file="Public:panelBar" />-->
+</div>

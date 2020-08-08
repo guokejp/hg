@@ -1,0 +1,30 @@
+<include file="Public:pageForm" />
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add" target="dialog" rel="Roleadd"><span>添加角色</span></a></li>
+			<li><a class="delete" href="__URL__/delete/id/{item_id}/navTabId/Roleindex" target="ajaxTodo" title="确定要删除吗?"><span>删除角色</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{item_id}" target="dialog" rel="Roleedit"><span>修改角色名称</span></a></li>
+			<li><a class="edit" href="__URL__/confirm/id/{item_id}" target="dialog" rel="Roleedit"><span>配置权限</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="77">
+		<thead>
+			<tr>
+				<th width="80">ID</th>
+				<th>角色名称</th>
+				<th width="100">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.name}></td>
+				<td></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>

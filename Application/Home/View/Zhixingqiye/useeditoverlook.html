@@ -1,0 +1,33 @@
+<include file="Public:pageForm" />
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="edit" href="__URL__/useedit/id/{item_id}" target="navTab" rel="Placardedit"><span>修改</span></a></li>
+		</ul>
+	</div>
+	<table class="list" width="100%" layoutH="56">
+		<thead>
+			<tr>
+				<th width="30">ID</th>
+				<th width="50">年份</th>
+				<th width="50">月份</th>
+				<th width="50">单位</th>
+				<th width="50">填报时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="list" item="vo">
+			<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+			<tr target="item_id" rel="<{$vo.id}>">
+				<td><{$vo.id}></td>
+				<td><{$vo.year}></td>
+				<td><{$vo.month}></td>
+				<td><{$vo.sectionname}></td>
+				<!-- <td><{$vo.time|date="Y-m-d",###}></td> -->
+				<td><a class="edit" href="__URL__/useedit/id/<{$vo.id}>"><span>修改</span></a></td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+	<include file="Public:panelBar" />
+</div>
